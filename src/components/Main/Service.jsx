@@ -20,7 +20,7 @@ const Service = () => (
                 <h3>
                     <FormattedMessage
                         id='design'
-                        defaultMessage='ADesign UX/UIboult me'
+                        defaultMessage='Design UX/UI'
                     />
                 </h3>
                 <p>
@@ -42,21 +42,6 @@ const Service = () => (
                     <FormattedMessage
                         id='development-info'
                         defaultMessage='Creation of well-structured web pages, good responsive design, attractive color palette, with interactions that give the user satisfaction when browsing the website.'
-                    />
-                </p>
-            </div>
-            <div className="columns" data-aos="fade-up" data-aos-delay="400">
-                <i className="fas fa-chart-line"></i>
-                <h3>
-                    <FormattedMessage
-                        id='marketing'
-                        defaultMessage='Digital marketing'
-                    />
-                </h3>
-                <p>
-                    <FormattedMessage
-                        id='marketing-info'
-                        defaultMessage='Complete maintenance of web pages to detect and solve errors, update content whether text, photos, web design elements, add new functions, etc.'
                     />
                 </p>
             </div>
