@@ -51,9 +51,9 @@ const About = () => {
             </div>
             <div className="sobre-mi-info">
               <p>
-                <FormattedMessage
-                  id='about-info-1'
-                  defaultMessage="Hi, I'm Shravankumar Patel, a Final Year B.Sc Computer Science student with a passion for Full Stack Web Development. As a beginner in this field, I am constantly eager to learn and explore new technologies. I am enthusiastic about working on full stack web development projects and ready to contribute effectively."
+               <FormattedMessage
+                id='about-info-1'
+                 defaultMessage="I'm Shravankumar Patel, an MCA student passionate about Full Stack Web Development and hands-on learning."
                 />
               </p>
 
