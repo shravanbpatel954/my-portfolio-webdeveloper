@@ -73,7 +73,7 @@ color: transparent;
 .loader span:nth-child(2) {
 color: var(--green);
 -webkit-text-stroke: 1px var(--green);
-animation: nahuel61920 3s ease-in-out infinite;
+animation: nahuel61920 1s ease-in-out infinite;
 }
 
 @keyframes nahuel61920 {
