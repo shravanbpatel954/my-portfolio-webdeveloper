@@ -26,13 +26,13 @@ const About = () => (
                 <h4>
                     <FormattedMessage
                         id='description'
-                        defaultMessage='My name is Shravankumar.B.Patel and I am a full stack developer.'
+                        defaultMessage='Shravankumar B. Patel — Full Stack Web Developer'
                     />
                 </h4>
                 <p>
                     <FormattedMessage
                         id='my-description'
-                        defaultMessage='I’m a Full Stack Web Developer and a first-year MCA (Master of Computer Applications) student, with a completed B.Sc. in Computer Science. Over the past few years, I’ve worked on several real-world web development projects—ranging from AI-powered applications to interactive platforms. I also had the opportunity to collaborate with Lakshwear, a clothing e-commerce startup, where I contributed to building a seamless and user-friendly shopping experience. Passionate about coding and technology, I’m constantly learning and exploring the latest tools in web development, aiming to build efficient and impactful digital solutions..'
+                        defaultMessage='I’m an MCA student with a B.Sc. in Computer Science and experience in full stack development. I’ve built real-world web apps, worked with Lakshwear (an e-commerce startup), and enjoy building clean, scalable, and user-friendly digital products.'
                     />
                 </p>
                 <ul>
