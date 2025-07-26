@@ -32,7 +32,7 @@ const About = () => (
                  <p>
                  <FormattedMessage
                   id='my-description'
-                  defaultMessage="I'm a Full Stack Developer currently pursuing an MCA, with a B.Sc. in Computer Science and hands-on experience in building scalable web applications. I’ve contributed to real-world projects, including an e-commerce platform with Lakshwear. I specialize in creating efficient, user-focused digital solutions using modern technologies."
+                  defaultMessage="I'm a Full Stack Developer currently pursuing an MCA, with a B.Sc. in Computer Science and hands-on experience in building scalable web applications. I’ve contributed to real-world projects, including an e-commerce platform with Lakshwear. I specialize in creating efficient, user-focused digital solutions using modern technologies. "
                  />
                 </p>
                 <ul>
