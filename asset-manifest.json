@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-portfolio-webdeveloper/static/css/main.d87768a1.css",
-    "main.js": "/my-portfolio-webdeveloper/static/js/main.34005065.js",
+    "main.css": "/my-portfolio-webdeveloper/static/css/main.40c82145.css",
+    "main.js": "/my-portfolio-webdeveloper/static/js/main.71be679f.js",
     "static/js/787.40086983.chunk.js": "/my-portfolio-webdeveloper/static/js/787.40086983.chunk.js",
     "static/media/Thumbs.db": "/my-portfolio-webdeveloper/static/media/Thumbs.735170b30af6b4c4247f.db",
     "static/media/proyecto-app-17-com.png": "/my-portfolio-webdeveloper/static/media/proyecto-app-17-com.1cacb50e9e33a1ece5a4.png",
@@ -66,12 +66,12 @@
     "static/media/proyecto-app-12.jpg": "/my-portfolio-webdeveloper/static/media/proyecto-app-12.0d8495ab02ed11fe1640.jpg",
     "static/media/proyecto-app-2.jpg": "/my-portfolio-webdeveloper/static/media/proyecto-app-2.5d8ddf1cc2638b419fd5.jpg",
     "index.html": "/my-portfolio-webdeveloper/index.html",
-    "main.d87768a1.css.map": "/my-portfolio-webdeveloper/static/css/main.d87768a1.css.map",
-    "main.34005065.js.map": "/my-portfolio-webdeveloper/static/js/main.34005065.js.map",
+    "main.40c82145.css.map": "/my-portfolio-webdeveloper/static/css/main.40c82145.css.map",
+    "main.71be679f.js.map": "/my-portfolio-webdeveloper/static/js/main.71be679f.js.map",
     "787.40086983.chunk.js.map": "/my-portfolio-webdeveloper/static/js/787.40086983.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d87768a1.css",
-    "static/js/main.34005065.js"
+    "static/css/main.40c82145.css",
+    "static/js/main.71be679f.js"
   ]
 }
