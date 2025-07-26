@@ -1,5 +1,5 @@
 import React from 'react';
-import './DarkMode.css'
+import './DarkMode.css';
 
 const DarkMode = () => {
     let clickedClass = "clicked";
@@ -20,24 +20,25 @@ const DarkMode = () => {
 
     const switchTheme = (e) => {
         if (theme === darkTheme) {
-        body.classList.replace(darkTheme, lightTheme);
-        e.target.classList.remove(clickedClass);
-        localStorage.setItem("theme", "light");
-        theme = lightTheme;
+            body.classList.replace(darkTheme, lightTheme);
+            e.target.classList.remove(clickedClass);
+            localStorage.setItem("theme", "light");
+            theme = lightTheme;
         } else {
-        body.classList.replace(lightTheme, darkTheme);
-        e.target.classList.add(clickedClass);
-        localStorage.setItem("theme", "dark");
-        theme = darkTheme;
+            body.classList.replace(lightTheme, darkTheme);
+            e.target.classList.add(clickedClass);
+            localStorage.setItem("theme", "dark");
+            theme = darkTheme;
         }
     };
+
     return (
         <div>
-            <div    
-                    className={theme === "dark" ? clickedClass : ""}
-                    id="darkMode"
-                    onClick={(e) => switchTheme(e)}
-                >
+            <div
+                className={theme === "dark" ? clickedClass : ""}
+                id="darkMode"
+                onClick={(e) => switchTheme(e)}
+            >
                 <span><i className="fas fa-sun"></i></span>
                 <span><i className="fas fa-moon"></i></span>
             </div>
