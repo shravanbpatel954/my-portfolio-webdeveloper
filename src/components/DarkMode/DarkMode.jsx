@@ -12,10 +12,13 @@ const DarkMode = () => {
         theme = localStorage.getItem("theme");
     }
 
+    // Set default to lightTheme if no valid theme is stored
     if (theme === lightTheme || theme === darkTheme) {
         body.classList.add(theme);
     } else {
-        body.classList.add(lightTheme);
+        body.classList.add(lightTheme); // Changed from darkTheme to lightTheme
+        theme = lightTheme;             // Also update the theme variable
+        localStorage.setItem("theme", lightTheme); // Save it
     }
 
     const switchTheme = (e) => {
