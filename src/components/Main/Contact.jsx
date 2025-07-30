@@ -37,7 +37,7 @@ const Contact = () => (
         </h3>
 
         <div className="icons">
-            <a href="shravanbpatel954@gmail.com" target="_blank" rel="noopener noreferrer" data-aos="zoom-in">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shravan.b.patel954@gmail.com" target="_blank" rel="noopener noreferrer" data-aos="zoom-in">
                 <div className="layer">
                     <span></span>
                     <span></span>
