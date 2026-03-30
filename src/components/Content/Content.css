@@ -33,7 +33,14 @@
 }
 
 .wrapper {
-    margin: 2rem;
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem 2rem;
+    width: 100%;
+    max-width: 100%;
 }
 .wrapper .button{
     display: flex;
@@ -41,8 +48,9 @@
     justify-content: flex-start;
     height: 60px;
     width: 60px;
-    float: left;
-    margin: 0 2rem;
+    float: none;
+    margin: 0;
+    flex-shrink: 0;
     overflow: hidden;
     color: #000;
     background: var(--green);
@@ -196,7 +204,16 @@
     }
 
     .titulo .redes-sociales{
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem 1.25rem;
+        width: 100%;
+    }
+
+    .inicio .titulo .redes-sociales a {
+        padding: 1rem 1.25rem;
     }
 }
 

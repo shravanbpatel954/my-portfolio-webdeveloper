@@ -7,6 +7,15 @@ import { Pagination, Autoplay } from 'swiper';
 
 const projects = [
   {
+    title: "StudyBuddy – AI-Powered Adaptive Learning Platform",
+    subtitle: "2024 · Full-Stack Web App",
+    description:
+      "Full-stack AI-driven learning platform with personalised study recommendations from learner performance. End-to-end stack: React.js, Node.js/Express, MongoDB, deployment on Render, and Google Gemini API for dynamic content and adaptive quizzes.",
+    live: "https://studybuddy-kc2m.onrender.com/",
+    image: require("../../img/studybuddy.jpeg"),
+    tech: "React.js • Node.js • MongoDB • Google Gemini API",
+  },
+  {
     title: "Prepa – AI Interview Prep Application",
     subtitle: "AI Interview Prep",
     description: "AI-powered app for job interview practice with real-time feedback and tailored questions.",
@@ -28,7 +37,7 @@ const projects = [
     title: "Lakshwear – Cloth E-commerce Website",
     subtitle: "E-commerce",
     description: "User-friendly e-commerce platform for seamless shopping, secure checkout, and user accounts.",
-    live: "https://www.lakshwear.in/",
+    live: "https://lakshwear-full-stack-frontend.onrender.com/",
     repo: "https://github.com/shravanbpatel954/lakshwear-ecommerce",
     image: require("../../img/lakshwear.jpeg"),
     tech: "HTML5 • CSS • React • JavaScript",
@@ -85,9 +94,11 @@ const Project = () => {
               {activeIndex === idx && (
                 <>
                   <p className="project-desc-swiper">{project.description}</p>
-                  <div style={{display: 'flex', gap: '1rem', justifyContent: 'center', margin: '1rem 0'}}>
+                  <div style={{display: 'flex', gap: '1rem', justifyContent: 'center', margin: '1rem 0', flexWrap: 'wrap'}}>
                     <a href={project.live} className="custom-btn btn" target="_blank" rel="noopener noreferrer">Demo</a>
-                    <a href={project.repo} className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">Repository</a>
+                    {project.repo && (
+                      <a href={project.repo} className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">Repository</a>
+                    )}
                   </div>
                 </>
               )}
@@ -102,9 +113,11 @@ const Project = () => {
             <img src={projects[modalIdx].image} alt={projects[modalIdx].title} style={{width: '100%', borderRadius: '12px', marginBottom: '1rem'}} />
             <h3 style={{margin: '1rem 0 0.5rem 0', textAlign: 'center'}}>{projects[modalIdx].title}</h3>
             <p style={{fontSize: '1.1rem', textAlign: 'center', marginBottom: '0.5rem'}}>{projects[modalIdx].description}</p>
-            <div style={{display: 'flex', gap: '1rem', marginTop: '1rem', justifyContent: 'center'}}>
+            <div style={{display: 'flex', gap: '1rem', marginTop: '1rem', justifyContent: 'center', flexWrap: 'wrap'}}>
               <a href={projects[modalIdx].live} className="custom-btn btn" target="_blank" rel="noopener noreferrer">Demo</a>
-              <a href={projects[modalIdx].repo} className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">Repository</a>
+              {projects[modalIdx].repo && (
+                <a href={projects[modalIdx].repo} className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">Repository</a>
+              )}
             </div>
           </div>
         </div>

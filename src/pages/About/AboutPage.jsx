@@ -11,9 +11,6 @@ import cv from '../../cv/cv.pdf';
 /* Multi idioma */
 import { FormattedMessage } from 'react-intl';
 
-/* Img */
-import imgabout from '../../img/home.jpg';
-
 const About = () => {
 
   function readMore() {
@@ -40,8 +37,8 @@ const About = () => {
         <section className="sobre-mi-seccion" id="sobre-mi">
           <div className="sobre-mi-container">
             <div className="sobre-mi-img-container">
-              <img src={imgabout} alt="" className="sobre-mi-img" />
-              
+              <div className="sobre-mi-img sobre-mi-placeholder" aria-hidden="true" />
+
               <a href={cv} target="_blank" rel="noopener noreferrer" download="cv.pdf" className="btn-codigo cv buttonDownload">
                   <FormattedMessage
                       id='btn-cv'

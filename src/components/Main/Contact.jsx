@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../pages/Contact/ContactPage.css'
-/* TypedJs */
-import Typical from 'react-typical';
+import Typical from '../TypicalText/TypicalText';
 
 /* Multi idioma */
 import { FormattedMessage } from 'react-intl';

@@ -51,6 +51,15 @@ const Project = () => {
         <section className="projects__grid paginas-web">
           <div className="projects__item">
             <div className="project-card">
+              <h3>StudyBuddy – AI-Powered Adaptive Learning Platform</h3>
+              <p>
+                Full-stack AI-driven learning platform delivering personalised study recommendations based on learner performance. React.js frontend, Node.js/Express backend, MongoDB, Render deployment, and Google Gemini API for adaptive quizzes and dynamic content.
+              </p>
+              <a href="https://studybuddy-kc2m.onrender.com/" className="custom-btn btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+          </div>
+          <div className="projects__item">
+            <div className="project-card">
               <h3>Prepa-AI Interview Prep Application</h3>
               <p>Developed an AI-powered application to help users prepare for job interviews by providing customized questions and feedback.</p>
               <a href="https://prepa-d7e15.web.app" className="custom-btn btn" target="_blank" rel="noopener noreferrer">View Project</a>

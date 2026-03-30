@@ -236,10 +236,13 @@ section .row .columns .skill img:hover {
 
 .sobre-mi-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: right;
+    min-height: 240px;
     border-radius: 2rem;
+}
+
+.sobre-mi-placeholder {
+    background: linear-gradient(145deg, rgba(0, 229, 254, 0.12), rgba(20, 30, 40, 0.35));
+    border: 2px solid rgba(0, 229, 254, 0.25);
 }
 
 .cv {

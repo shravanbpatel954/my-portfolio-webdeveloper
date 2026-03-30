@@ -1,7 +1,7 @@
 import React from 'react';
 import './Content.css';
 import ParticleHeaderBg from '../ParticlesBg/ParticlesHeader/ParticleHeaderBg';
-import Typical from 'react-typical';
+import Typical from '../TypicalText/TypicalText';
 
 /* ReactScroll */
 import { Link } from 'react-scroll';

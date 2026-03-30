@@ -1,45 +1,81 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import './Education.css';
 
 const educationData = [
   {
-    title: 'Graduation',
-    degree: 'B.Sc Computer Science',
-    institution: 'N.E.S Ratnam College of Arts, Science & Commerce',
-    year: '2022 - 2025',
+    level: 'Postgraduate',
+    degree: 'Master of Computer Applications (MCA)',
+    institution: 'Bharati Vidyapeeth Institute of Management & IT (BVIMIT), Navi Mumbai',
+    period: 'Sep 2025 – Present',
+    status: 'current',
   },
   {
-    title: 'High School',
+    level: 'Graduation',
+    degree: 'B.Sc Computer Science',
+    institution: 'N.E.S Ratnam College of Arts, Science & Commerce',
+    period: '2022 – 2025',
+    status: 'completed',
+  },
+  {
+    level: 'High School',
     degree: 'PCMB (Physics, Chemistry, Mathematics, Biology)',
     institution: 'Raminiranjan Jhunjhunwala College',
-    year: '2021 - 2022',
+    period: '2021 – 2022',
+    status: 'completed',
   },
 ];
 
 const Education = () => (
-  <section className="education" id="education" style={{padding: '3rem 0', background: 'none'}}>
-    <h2 className="heading" style={{textAlign: 'center', marginBottom: '2rem', color: '#00e5fe', letterSpacing: '2px', fontWeight: 700, textShadow: '0 2px 12px rgba(0,229,254,0.15)'}}>Education</h2>
-    <div className="education__content" style={{display: 'flex', gap: '2.5rem', justifyContent: 'center', alignItems: 'flex-start', flexWrap: 'wrap'}}>
+  <section className="education-section" id="education">
+    <h2 className="heading education-section__title">
+      <FormattedMessage id="education" defaultMessage="Education" />
+    </h2>
+    <p className="education-section__subtitle">
+      <FormattedMessage
+        id="education-subtitle"
+        defaultMessage="Academic journey — from foundations to postgraduate studies."
+      />
+    </p>
+
+    <div className="education-timeline" role="list">
       {educationData.map((edu, idx) => (
-        <div className="education-card animated-col" key={idx} style={{border: '2.5px solid #00e5fe', background: 'rgba(20,30,40,0.35)', backdropFilter: 'blur(8px)', borderRadius: '18px', boxShadow: '0 8px 32px rgba(0,229,254,0.10), 0 2px 8px rgba(0,0,0,0.18)', padding: '2rem', minWidth: '260px', maxWidth: '340px', transition: 'transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.4s', cursor: 'pointer', animation: `fadeInUp 0.7s ${0.2 + idx * 0.2}s both`}}>
-          <h3 style={{color: '#00e5fe', marginBottom: '0.5rem', textShadow: '0 0 8px #00e5fe55'}}>{edu.title}</h3>
-          <div style={{fontWeight: 700, fontSize: '1.15rem', marginBottom: '0.5rem', color: '#fff', textShadow: '0 0 8px #00e5fe33'}}>{edu.degree}</div>
-          <div style={{color: '#e0f7fa', marginBottom: '0.5rem', fontWeight: 600, fontSize: '1.05rem', textShadow: '0 0 8px #00e5fe22'}}>{edu.institution}</div>
-          <div style={{color: '#00e5fe', fontWeight: 600, letterSpacing: '1px'}}>{edu.year}</div>
+        <div
+          className={`education-timeline__item ${
+            edu.status === 'current' ? 'education-timeline__item--current' : ''
+          }`}
+          key={`${edu.level}-${edu.period}`}
+          role="listitem"
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-delay={100 + idx * 120}
+        >
+          <span className="education-timeline__marker" aria-hidden="true" />
+          <article className="education-card">
+            <div className="education-card__top">
+              <div className="education-card__icon" aria-hidden="true">
+                <i className="fas fa-graduation-cap" />
+              </div>
+              <div className="education-card__meta">
+                <span className="education-card__level">{edu.level}</span>
+                {edu.status === 'current' && (
+                  <span className="education-card__badge">
+                    <FormattedMessage id="education-current" defaultMessage="Current" />
+                  </span>
+                )}
+              </div>
+            </div>
+            <h3 className="education-card__degree">{edu.degree}</h3>
+            <p className="education-card__school">{edu.institution}</p>
+            <div className="education-card__period">
+              <i className="far fa-calendar-alt" aria-hidden="true" />
+              <span>{edu.period}</span>
+            </div>
+          </article>
         </div>
       ))}
     </div>
-    <style>{`
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(40px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .education-card.animated-col:hover {
-        transform: scale(1.07) rotate(-1deg);
-        box-shadow: 0 12px 40px #00e5fe44, 0 2px 8px rgba(0,0,0,0.18);
-        border-color: #00e5fe;
-      }
-    `}</style>
   </section>
 );
 
-export default Education; 
+export default Education;
