@@ -88,6 +88,20 @@ const Project = () => {
           </div>
           <div className="projects__item">
             <div className="project-card">
+              <h3>StudyBuddy – AI-Powered Adaptive Learning & Quiz Platform</h3>
+              <p>StudyBuddy is an AI-driven learning platform offering personalized study modules, smart quizzes, and exam-focused insights.</p>
+              <a href="https://studybuddy-kc2m.onrender.com/" className="custom-btn btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+          </div>
+          <div className="projects__item">
+            <div className="project-card">
+              <h3>Table Booking System – Spring Boot Microservice</h3>
+              <p>A real-time restaurant table booking system built with Spring Boot.</p>
+              <a href="https://table-booking-system-micro-springboot.onrender.com" className="custom-btn btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+          </div>
+          <div className="projects__item">
+            <div className="project-card">
               <h3>Creative Recycle Solution Web</h3>
               <p>A smart solution that guides users on how to recycle or creatively repurpose everyday items into reusable or valuable products.</p>
               <a href="https://crwa.onrender.com/" className="custom-btn btn" target="_blank" rel="noopener noreferrer">View Project</a>
