@@ -32,6 +32,7 @@ const Content = () => (
                       'Backend Developer', 1500,
                       'Full Stack Web Developer', 1500,
                       'React Developer', 1500,
+                      'DevOps & CI/CD Enthusiast', 1500,
                     ]}
                   />
                 </div>

@@ -112,17 +112,72 @@ const About = () => (
                 <h4>
                     <FormattedMessage
                         id='tools'
-                        defaultMessage='Tools'
+                        defaultMessage='Tools & DevOps'
                     />
                 </h4>
                 <div className="skill">
-
                     <div>
-                        <img alt="Visual Studio Code" className="icons-skils" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Visual_Studio_Code_1.18_icon.svg/1200px-Visual_Studio_Code_1.18_icon.svg.png" title="Visual Studio Code" />
-                        <h5>VS Code</h5></div>
+                        <img
+                            alt="Visual Studio Code"
+                            className="icons-skils"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Visual_Studio_Code_1.18_icon.svg/1200px-Visual_Studio_Code_1.18_icon.svg.png"
+                            title="Visual Studio Code"
+                        />
+                        <h5>VS Code</h5>
+                    </div>
                     <div>
-                        <img alt="git" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title="git" />
+                        <img
+                            alt="Git"
+                            className="icons-skils"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                            title="Git"
+                        />
                         <h5>Git</h5>
+                    </div>
+                    <div>
+                        <img
+                            alt="GitHub"
+                            className="icons-skils"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                            title="GitHub"
+                        />
+                        <h5>GitHub</h5>
+                    </div>
+                    <div>
+                        <img
+                            alt="GitLab"
+                            className="icons-skils"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg"
+                            title="GitLab"
+                        />
+                        <h5>GitLab</h5>
+                    </div>
+                    <div>
+                        <img
+                            alt="Jenkins"
+                            className="icons-skils"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
+                            title="Jenkins"
+                        />
+                        <h5>Jenkins</h5>
+                    </div>
+                    <div>
+                        <img
+                            alt="Docker"
+                            className="icons-skils"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                            title="Docker"
+                        />
+                        <h5>Docker</h5>
+                    </div>
+                    <div>
+                        <img
+                            alt="Kubernetes"
+                            className="icons-skils"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+                            title="Kubernetes"
+                        />
+                        <h5>Kubernetes</h5>
                     </div>
                 </div>
             </div>

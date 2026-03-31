@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#0b0f1e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5fe"/>
+      <stop offset="100%" stop-color="#15b8ca"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="44" fill="url(#bg)"/>
+  <rect x="70" y="80" width="1060" height="470" rx="34" fill="none" stroke="url(#accent)" stroke-width="3" opacity="0.35"/>
+
+  <text x="120" y="260" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="78" font-weight="800" fill="#00e5fe">
+    Shravankumar
+  </text>
+  <text x="120" y="345" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="40" font-weight="600" fill="#9fd8e4">
+    Full Stack Web Developer & DevOps
+  </text>
+
+  <g transform="translate(120 400)">
+    <rect width="430" height="64" rx="999" fill="rgba(0,229,254,0.12)" stroke="rgba(0,229,254,0.35)"/>
+    <text x="215" y="42" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="26" font-weight="700" fill="#e7fbff">
+      React " Node " Docker " Kubernetes
+    </text>
+  </g>
+</svg>
+

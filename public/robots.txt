@@ -1,3 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap for search engines
+Sitemap: https://shravankumar.co.in/sitemap.xml

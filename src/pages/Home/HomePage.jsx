@@ -7,6 +7,7 @@ import Main from '../../components/Main';
 import Content from '../../components/Content/Content';
 import ParticleBackground from "../../components/ParticlesBg/ParticleBackground";
 import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
+import Chatbot from '../../components/Chatbot/Chatbot';
 
 const Home = () => {
   return (
@@ -23,6 +24,8 @@ const Home = () => {
       <ScrollToTop />
 
       <Footer />
+
+      <Chatbot />
 
     </div>
   )
