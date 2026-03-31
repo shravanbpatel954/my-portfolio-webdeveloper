@@ -3,7 +3,7 @@
 A modern, animated, and fully responsive portfolio website to showcase my projects, skills, certificates, and education.
 
 ## 🌐 Live Demo
-[View Portfolio Live](https://shravanbpatel954.github.io/my-portfolio-webdeveloper/)
+[View Portfolio Live](https://shravankumar.co.in/)
 
 ---
 
