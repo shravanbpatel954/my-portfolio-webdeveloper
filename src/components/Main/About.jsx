@@ -52,7 +52,7 @@ const About = () => (
                     </li>
                 </ul>
                 <div className="mas-info">
-                    <a href={cv} target="_blank" rel="noopener noreferrer" download="cv.pdf" className="btn-codigo buttonDownload">
+                    <a href={cv} target="_blank" rel="noopener noreferrer" download="Shravankumar-patel.pdf" className="btn-codigo buttonDownload">
                         <FormattedMessage
                             id='btn-cv'
                             defaultMessage='Download CV'
