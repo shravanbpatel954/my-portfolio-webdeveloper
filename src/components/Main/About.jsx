@@ -32,7 +32,9 @@ const About = () => (
                 <p>
                     <FormattedMessage
                         id='my-description'
-                        defaultMessage="I'm an MCA student with a B.Sc. in Computer Science and experience in full stack development. I've built real-world web apps, worked with Lakshwear (an e-commerce startup), and enjoy building clean, scalable, and user-friendly digital products."
+                        defaultMessage="’m a Full-Stack Developer specializing in building scalable web and mobile applications using React.js, React Native, Node.js, and MongoDB. I focus on developing AI-powered solutions, including NLP-based systems, semantic search pipelines, and real-time applications.
+
+I’ve built multiple production-ready projects, including an AI-based multilingual duplicate detection system and adaptive learning platforms. My work emphasizes performance optimization, clean architecture, and user-centric design."
                     />
                 </p>
                 <ul>
@@ -55,7 +57,7 @@ const About = () => (
                     <a href={cv} target="_blank" rel="noopener noreferrer" download="Shravankumar-patel.pdf" className="btn-codigo buttonDownload">
                         <FormattedMessage
                             id='btn-cv'
-                            defaultMessage='Download CV'
+                            defaultMessage='Download Resume'
                         />
                     </a>
 
