@@ -6,9 +6,34 @@ import { Link } from 'react-scroll';
 import { FormattedMessage } from 'react-intl';
 import cv from '../../cv/cv.pdf';
 
-const HERO_TAGS = ['React.js', 'Node.js', 'MongoDB', 'Python', 'React Native', 'Docker', 'FAISS', 'ONNX'];
+const SEEKING_ROLES = ['Full-Time', 'Internship'];
 
-const SEEKING_ROLES = ['Full-Time', 'Internship', 'Graduate SDE'];
+const HERO_PEEKS = [
+  {
+    id: 'hero-peek-projects',
+    defaultMessage: '10 projects',
+    subId: 'hero-peek-projects-sub',
+    subDefault: 'MERN, mobile & AI',
+    to: 'proyectos',
+    icon: 'fa-layer-group',
+  },
+  {
+    id: 'hero-peek-live',
+    defaultMessage: '1 live product',
+    subId: 'hero-peek-live-sub',
+    subDefault: 'realtorbazar.com',
+    to: 'proyectos',
+    icon: 'fa-globe',
+  },
+  {
+    id: 'hero-peek-hackathon',
+    defaultMessage: 'Hackathon win',
+    subId: 'hero-peek-hackathon-sub',
+    subDefault: '2nd of 50+ teams',
+    to: 'hackathon',
+    icon: 'fa-trophy',
+  },
+];
 
 const Content = () => (
   <div className="contenido">
@@ -42,30 +67,55 @@ const Content = () => (
 
         <p className="hero-role-line">
           <FormattedMessage id="hero-role-line" defaultMessage="Aspiring" />{' '}
-          <span className="hero-typewriter">
-            <Typical
-              loop={Infinity}
-              wrapper="span"
-              steps={[
-                'Full-Stack Developer',
-                1500,
-                'Software Engineer',
-                1500,
-                'AI / ML Engineer',
-                1500,
-                'React Native Developer',
-                1500,
-              ]}
-            />
-          </span>
-        </p>
-
-        <p className="hero-summary">
-          <FormattedMessage
-            id="hero-summary"
-            defaultMessage="MCA student with hands-on project experience in MERN stack, React Native, and AI pipelines. Built award-winning hackathon systems, a live deployed web platform, university software, and an Android ML app — now seeking a graduate developer role."
+          <Typical
+            className="hero-typewriter"
+            loop={Infinity}
+            wrapper="span"
+            typeSpeed={58}
+            deleteSpeed={32}
+            steps={[
+              'Full-Stack Developer',
+              2200,
+              'Software Engineer',
+              2200,
+              'AI / ML Engineer',
+              2200,
+              'React Native Developer',
+              2200,
+              'Cloud-Ready Developer',
+              2200,
+            ]}
           />
         </p>
+
+        <p className="hero-hook">
+          <FormattedMessage
+            id="hero-hook"
+            defaultMessage="The intro is short on purpose — scroll for live deployments, hackathon proof, and the full project list."
+          />
+        </p>
+
+        <div className="hero-peeks" role="navigation" aria-label="Quick links to portfolio highlights">
+          {HERO_PEEKS.map((peek) => (
+            <Link
+              key={peek.id}
+              to={peek.to}
+              spy
+              smooth
+              offset={-120}
+              href={`#${peek.to}`}
+              className="hero-peek"
+            >
+              <i className={`fas ${peek.icon}`} aria-hidden />
+              <span className="hero-peek__title">
+                <FormattedMessage id={peek.id} defaultMessage={peek.defaultMessage} />
+              </span>
+              <span className="hero-peek__sub">
+                <FormattedMessage id={peek.subId} defaultMessage={peek.subDefault} />
+              </span>
+            </Link>
+          ))}
+        </div>
 
         <div className="hero-seeking">
           <span className="hero-seeking__label">
@@ -78,16 +128,8 @@ const Content = () => (
           ))}
         </div>
 
-        <div className="hero-tags">
-          {HERO_TAGS.map((tag) => (
-            <span key={tag} className="hero-tech-tag">
-              {tag}
-            </span>
-          ))}
-        </div>
-
         <div className="hero-cta">
-          <Link to="proyectos" spy offset={-150} href="#proyectos" className="custom-btn btn">
+          <Link to="proyectos" spy offset={-120} href="#proyectos" className="custom-btn btn">
             <FormattedMessage id="btn-more-projects" defaultMessage="View Projects" />
           </Link>
           <a
@@ -109,7 +151,17 @@ const Content = () => (
           </a>
         </div>
 
-        <Link to="sobre-mi" href="#sobre-mi" className="hero-scroll-link">
+        <Link
+          to="profile-glance"
+          spy
+          smooth
+          offset={-100}
+          href="#profile-glance"
+          className="hero-scroll-cta"
+        >
+          <span className="hero-scroll-cta__text">
+            <FormattedMessage id="hero-scroll-cta" defaultMessage="See what's below" />
+          </span>
           <div className="scroll-down" aria-hidden />
         </Link>
       </div>

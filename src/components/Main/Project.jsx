@@ -25,7 +25,7 @@ const AccessNotice = ({ project }) => {
 };
 
 const Project = () => {
-  const [filter, setFilter] = useState('featured');
+  const [filter, setFilter] = useState('all');
   const [modalProject, setModalProject] = useState(null);
 
   const filtered = useMemo(() => {

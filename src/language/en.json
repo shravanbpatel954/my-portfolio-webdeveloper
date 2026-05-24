@@ -23,10 +23,16 @@
   "hero-seeking-label": "Open to",
   "rol": "MCA Student · Aspiring Software Developer",
   "hero-badge": "MCA Candidate · Open to full-time & internship roles",
-  "hero-summary": "MCA student with hands-on project experience in MERN stack, React Native, and AI pipelines. Built award-winning hackathon systems, a live deployed web platform, university software, and an Android ML app — now seeking a graduate developer role.",
+  "hero-hook": "The intro is short on purpose — scroll for live deployments, hackathon proof, and the full project list.",
+  "hero-scroll-cta": "See what's below",
+  "hero-peek-projects": "10 projects",
+  "hero-peek-projects-sub": "MERN, mobile & AI",
+  "hero-peek-live": "1 live product",
+  "hero-peek-live-sub": "realtorbazar.com",
+  "hero-peek-hackathon": "Hackathon win",
+  "hero-peek-hackathon-sub": "2nd of 50+ teams",
 
   "profile-glance": "Profile at a Glance",
-  "profile-glance-subtitle": "Quick snapshot for recruiters reviewing my MCA profile and project work.",
 
   "im": "About me",
   "description": "MCA Student · Aspiring Full-Stack & AI Developer",

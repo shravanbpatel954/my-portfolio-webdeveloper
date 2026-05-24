@@ -26,16 +26,10 @@ const highlights = [
 ];
 
 const RecruiterHighlights = () => (
-  <section className="recruiter-highlights" aria-label="Profile summary for recruiters">
+  <section className="recruiter-highlights" id="profile-glance" aria-label="Profile summary for recruiters">
     <h2 className="recruiter-highlights__heading">
       <FormattedMessage id="profile-glance" defaultMessage="Profile at a Glance" />
     </h2>
-    <p className="recruiter-highlights__subtitle section-subtitle">
-      <FormattedMessage
-        id="profile-glance-subtitle"
-        defaultMessage="Quick snapshot for recruiters reviewing my MCA profile and project work."
-      />
-    </p>
     <div className="recruiter-highlights__grid">
       {highlights.map((item, idx) => (
         <div

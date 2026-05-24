@@ -19,10 +19,16 @@
   "hero-seeking-label": "Abierto a",
   "rol": "Estudiante MCA · Desarrollador de software",
   "hero-badge": "Candidato MCA · Abierto a tiempo completo e internship",
-  "hero-summary": "Estudiante de MCA con experiencia práctica en MERN, React Native y pipelines de IA. Busco rol como desarrollador graduate.",
+  "hero-hook": "La intro es breve a propósito — desplázate para ver despliegues, el hackathon y todos los proyectos.",
+  "hero-scroll-cta": "Mira lo de abajo",
+  "hero-peek-projects": "10 proyectos",
+  "hero-peek-projects-sub": "MERN, móvil e IA",
+  "hero-peek-live": "1 producto en vivo",
+  "hero-peek-live-sub": "realtorbazar.com",
+  "hero-peek-hackathon": "Hackathon",
+  "hero-peek-hackathon-sub": "2º de 50+ equipos",
 
   "profile-glance": "Resumen del perfil",
-  "profile-glance-subtitle": "Vista rápida para reclutadores que revisan mi perfil MCA y proyectos.",
 
   "im": "Sobre mí",
   "description": "Estudiante MCA · Desarrollador Full-Stack y IA",

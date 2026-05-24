@@ -1,0 +1,24 @@
+.typical-typewriter::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--text-accent);
+  font-weight: 400;
+  animation: typical-cursor-blink 0.9s step-end infinite;
+}
+
+@keyframes typical-cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typical-typewriter::after {
+    display: none;
+  }
+}
