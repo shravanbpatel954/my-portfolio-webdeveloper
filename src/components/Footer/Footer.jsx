@@ -14,11 +14,14 @@ const Footer = () =>{
             <div className="site-footer">
                 <div className="copyright">
                     <p>
-                        Page created by Shravankumar
+                        <a href="https://shravankumar.co.in" target="_blank" rel="noopener noreferrer">
+                            shravankumar.co.in
+                        </a>
                     </p>
-                    <p>&copy; {fecha}. All Rights Reserved.</p>
+                    <p>&copy; {fecha} Shravankumar B. Patel. All rights reserved.</p>
                 </div>
                 <div className="redes-sociales">
+                <a href="mailto:shravan.b.patel954@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i className="fas fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/shravan-kumar-patel/" target="_blank" rel="noopener noreferrer" data-aos="fade-up" data-aos-delay="1200"><i className="fab fa-linkedin"></i></a>
                     <a href="https://github.com/shravanbpatel954/" target="_blank" rel="noopener noreferrer" data-aos="fade-up" data-aos-delay="1400"><i className="fab fa-github"></i></a>
                     <a href="https://www.instagram.com/shravan___1809/" target="_blank" rel="noopener noreferrer" data-aos="fade-up" data-aos-delay="1600"><i className="fab fa-instagram"></i></a>

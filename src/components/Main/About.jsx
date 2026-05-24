@@ -1,9 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import cv from '../../cv/cv.pdf';
-import { ButtomGet } from '../ButtomGet/ButtomGet';
-
-/* Multi idioma */
 import { FormattedMessage } from 'react-intl';
 
 const About = () => (
@@ -37,19 +33,38 @@ const About = () => (
 I’ve built multiple production-ready projects, including an AI-based multilingual duplicate detection system and adaptive learning platforms. My work emphasizes performance optimization, clean architecture, and user-centric design."
                     />
                 </p>
-                <ul>
+                <ul className="about-facts">
+                    <li>
+                        <p><span>Education:</span> MCA (Pursuing), BVIMIT · B.Sc. CS</p>
+                    </li>
+                    <li>
+                        <p><span>Looking for:</span> Full-Time · Internship · Graduate SDE</p>
+                    </li>
                     <li>
                         <p><span>Email:</span> shravan.b.patel954@gmail.com</p>
                     </li>
                     <li>
                         <p>
                             <span>
-                                <FormattedMessage
-                                    id='from'
-                                    defaultMessage='From:'
-                                />
+                                <FormattedMessage id="from" defaultMessage="Location:" />
                             </span>
                             Mumbai, India
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span>LinkedIn:</span>{' '}
+                            <a href="https://www.linkedin.com/in/shravan-kumar-patel/" target="_blank" rel="noopener noreferrer">
+                                linkedin.com/in/shravan-kumar-patel
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span>GitHub:</span>{' '}
+                            <a href="https://github.com/shravanbpatel954" target="_blank" rel="noopener noreferrer">
+                                github.com/shravanbpatel954
+                            </a>
                         </p>
                     </li>
                 </ul>
@@ -64,122 +79,115 @@ I’ve built multiple production-ready projects, including an AI-based multiling
                 </div>
             </div>
             <div className="columns col-skill" data-aos="fade-left" data-aos-delay="650">
-                <h3>skills</h3>
-                <h4>Front-End</h4>
+                <h3>
+                    <FormattedMessage id="tools" defaultMessage="Technical stack" />
+                </h3>
+                
+                <h4>Languages</h4>
                 <div className="skill">
                     <div>
-                        <img alt="HTML" className="icons-skils" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" />
-                        <h5>HTML</h5>
-                    </div>
-                    <div>
-                        <img alt="CSS" className="icons-skils" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" />
-                        <h5>CSS</h5>
-                    </div>
-                    <div>
-                        <img alt="Js" className="icons-skils" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" />
+                        <img alt="JS" className="icons-skils" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" />
                         <h5>JavaScript</h5>
                     </div>
                     <div>
-                        <img alt="Bootstrap" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
-                        <h5>Bootstrap</h5>
+                        <img alt="TS" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
+                        <h5>TypeScript</h5>
                     </div>
                     <div>
-                        <img alt="React" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-                        <h5>React</h5>
+                        <img alt="Python" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+                        <h5>Python</h5>
                     </div>
                     <div>
-                        <img alt="Typescript" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
-                        <h5>Typescript</h5>
+                        <img alt="Java" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
+                        <h5>Java</h5>
                     </div>
                 </div>
-                <h4>Back-End</h4>
+
+                <h4>Front-End & Mobile</h4>
+                <div className="skill">
+                    <div>
+                        <img alt="React" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+                        <h5>React.js</h5>
+                    </div>
+                    <div>
+                        <img alt="React Native" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style={{ transform: 'rotate(20deg)' }} />
+                        <h5>React Native</h5>
+                    </div>
+                    <div>
+                        <img alt="HTML" className="icons-skils" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" />
+                        <h5>HTML5</h5>
+                    </div>
+                    <div>
+                        <img alt="CSS" className="icons-skils" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" />
+                        <h5>CSS3</h5>
+                    </div>
+                </div>
+
+                <h4>Back-End & Databases</h4>
                 <div className="skill">
                     <div>
                         <img alt="Nodejs" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
-                        <h5>NodeJs</h5>
+                        <h5>Node.js</h5>
                     </div>
                     <div>
-                        <img alt="express" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />
+                        <img alt="Express" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" />
                         <h5>Express</h5>
                     </div>
                     <div>
-                        <img alt="mysql" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+                        <img alt="MongoDB" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg" />
+                        <h5>MongoDB</h5>
+                    </div>
+                    <div>
+                        <img alt="Postgre" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
+                        <h5>PostgreSQL</h5>
+                    </div>
+                    <div>
+                        <img alt="MySQL" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
                         <h5>MySQL</h5>
                     </div>
                     <div>
-                        <img alt="mongodb" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg" />
-                        <h5>MongodDB</h5>
+                        <img alt="Firebase" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" />
+                        <h5>Firebase</h5>
                     </div>
                 </div>
-                <h4>
-                    <FormattedMessage
-                        id='tools'
-                        defaultMessage='Tools & DevOps'
-                    />
-                </h4>
+
+                <h4>AI & Machine Learning</h4>
                 <div className="skill">
                     <div>
-                        <img
-                            alt="Visual Studio Code"
-                            className="icons-skils"
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Visual_Studio_Code_1.18_icon.svg/1200px-Visual_Studio_Code_1.18_icon.svg.png"
-                            title="Visual Studio Code"
-                        />
-                        <h5>VS Code</h5>
+                        <div className="icons-skils-fa-fallback"><i className="fas fa-brain" style={{ fontSize: '2.5rem', color: '#00f2fe' }}></i></div>
+                        <h5>MiniLM / NLP</h5>
                     </div>
                     <div>
-                        <img
-                            alt="Git"
-                            className="icons-skils"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                            title="Git"
-                        />
-                        <h5>Git</h5>
+                        <div className="icons-skils-fa-fallback"><i className="fas fa-search" style={{ fontSize: '2.5rem', color: '#6366f1' }}></i></div>
+                        <h5>FAISS Vector</h5>
                     </div>
                     <div>
-                        <img
-                            alt="GitHub"
-                            className="icons-skils"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                            title="GitHub"
-                        />
-                        <h5>GitHub</h5>
+                        <div className="icons-skils-fa-fallback"><i className="fas fa-microchip" style={{ fontSize: '2.5rem', color: '#3b82f6' }}></i></div>
+                        <h5>ONNX Runtime</h5>
                     </div>
                     <div>
-                        <img
-                            alt="GitLab"
-                            className="icons-skils"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg"
-                            title="GitLab"
-                        />
-                        <h5>GitLab</h5>
+                        <div className="icons-skils-fa-fallback"><i className="fas fa-robot" style={{ fontSize: '2.5rem', color: '#a855f7' }}></i></div>
+                        <h5>Gemini / LLMs</h5>
                     </div>
+                </div>
+
+                <h4>DevOps & Infrastructure</h4>
+                <div className="skill">
                     <div>
-                        <img
-                            alt="Jenkins"
-                            className="icons-skils"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
-                            title="Jenkins"
-                        />
-                        <h5>Jenkins</h5>
-                    </div>
-                    <div>
-                        <img
-                            alt="Docker"
-                            className="icons-skils"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                            title="Docker"
-                        />
+                        <img alt="Docker" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
                         <h5>Docker</h5>
                     </div>
                     <div>
-                        <img
-                            alt="Kubernetes"
-                            className="icons-skils"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
-                            title="Kubernetes"
-                        />
-                        <h5>Kubernetes</h5>
+                        <img alt="Git" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+                        <h5>Git</h5>
+                    </div>
+                    <div>
+                        <img alt="GitHub" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+                        <h5>GitHub</h5>
+                    </div>
+                    <div>
+                        <div className="icons-skils-fa-fallback"><i className="fas fa-cloud-upload-alt" style={{ fontSize: '2.5rem', color: '#00f2fe' }}></i></div>
+                        <h5>Render / Railway</h5>
                     </div>
                 </div>
             </div>

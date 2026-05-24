@@ -27,9 +27,9 @@ const Contact = () => (
                 steps={[
                     'Gmail', 1500,
                     'WhatsApp', 1500,
-                    'Instragram', 1500,
-                    'Linkedin', 1500,
-                    'Github', 1500,
+                    'LinkedIn', 1500,
+                    'GitHub', 1500,
+                    'shravankumar.co.in', 1500,
                 ]}
             />
 

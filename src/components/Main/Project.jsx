@@ -1,146 +1,252 @@
-import React, { useState } from 'react';
-import '../../pages/Project/ProjectPage.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination, Autoplay } from 'swiper';
+import React, { useMemo, useState } from 'react';
+import { FormattedMessage } from 'react-intl';
+import projects, { ACCESS_LABELS, PROJECT_FILTERS } from '../../data/projects';
+import './Project.css';
 
-const projects = [
-  {
-    title: "StudyBuddy – AI-Powered Adaptive Learning Platform",
-    subtitle: "2024 · Full-Stack Web App",
-    description:
-      "Full-stack AI-driven learning platform with personalised study recommendations from learner performance. End-to-end stack: React.js, Node.js/Express, MongoDB, deployment on Render, and Google Gemini API for dynamic content and adaptive quizzes.",
-    live: "https://studybuddy-kc2m.onrender.com/",
-    image: require("../../img/studybuddy.jpeg"),
-    tech: "React.js • Node.js • MongoDB • Google Gemini API",
-  },
-  {
-    title: "Prepa – AI Interview Prep Application",
-    subtitle: "AI Interview Prep",
-    description: "AI-powered app for job interview practice with real-time feedback and tailored questions.",
-    live: "https://prepa-d7e15.web.app",
-    repo: "https://github.com/shravanbpatel954/prepa-ai-interview-prep",
-    image: require("../../img/prepa.jpeg"),
-    tech: "HTML5 • CSS • React • Python",
-  },
-  {
-    title: "AIO – AI-Based Advisor Web Application",
-    subtitle: "AI Advisor Platform",
-    description: "Intelligent advisor platform offering personalized advice, recommendations, and insights.",
-    live: "https://aio-5igz.onrender.com",
-    repo: "https://github.com/shravanbpatel954/aio-advisor",
-    image: require("../../img/aio.jpeg"),
-    tech: "HTML5 • CSS • React • Node.js",
-  },
-  {
-    title: "Lakshwear – Cloth E-commerce Website",
-    subtitle: "E-commerce",
-    description: "User-friendly e-commerce platform for seamless shopping, secure checkout, and user accounts.",
-    live: "https://lakshwear-full-stack-frontend.onrender.com/",
-    repo: "https://github.com/shravanbpatel954/lakshwear-ecommerce",
-    image: require("../../img/lakshwear.jpeg"),
-    tech: "HTML5 • CSS • React • JavaScript",
-  },
-  {
-    title: "Online Game Lab",
-    subtitle: "Game Lab",
-    description: "Personal project to experiment with game logic and web interactivity. Collection of simple games.",
-    live: "https://onlinegamelab.onrender.com/",
-    repo: "https://github.com/shravanbpatel954/online-game-lab",
-    image: require("../../img/onlinegamelab.jpeg"),
-    tech: "HTML5 • CSS • React • JavaScript",
-  },
-  {
-    title: "Creative Recycle Solution Web",
-    subtitle: "Recycle Solution",
-    description: "Guides users to recycle or creatively repurpose everyday items into reusable or valuable products.",
-    live: "https://crwa.onrender.com/",
-    repo: "https://github.com/shravanbpatel954/creative-recycle-web",
-    image: require("../../img/crwa.jpeg"),
-    tech: "HTML5 • CSS • React • JavaScript",
-  },
-];
+const AccessNotice = ({ project }) => {
+  if (!project.accessNote) return null;
+  return (
+    <p className={`project-access project-access--${project.access}`} role="note">
+      <i
+        className={`fas ${
+          project.access === 'live'
+            ? 'fa-external-link-alt'
+            : project.access === 'mobile'
+              ? 'fa-android'
+              : project.access === 'internal'
+                ? 'fa-lock'
+                : 'fa-info-circle'
+        }`}
+        aria-hidden
+      />
+      {project.accessNote}
+    </p>
+  );
+};
 
 const Project = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [modalIdx, setModalIdx] = useState(null);
+  const [filter, setFilter] = useState('featured');
+  const [modalProject, setModalProject] = useState(null);
+
+  const filtered = useMemo(() => {
+    if (filter === 'all') return projects;
+    if (filter === 'featured') return projects.filter((p) => p.featured);
+    return projects.filter((p) => p.category === filter);
+  }, [filter]);
+
+  const openModal = (e, project) => {
+    if (e.target.closest('a')) return;
+    setModalProject(project);
+  };
+
+  const renderMedia = (project) => {
+    if (project.image) {
+      return (
+        <img
+          src={project.image}
+          alt={`${project.title} screenshot`}
+          style={project.imageFit === 'cover' ? { objectFit: 'cover' } : undefined}
+        />
+      );
+    }
+    const ph = project.placeholder;
+    return (
+      <div
+        className="project-card-v2__placeholder"
+        style={{ background: ph?.gradient || 'var(--gradient-glow)' }}
+        aria-hidden
+      >
+        {ph?.icon || '⚡'}
+      </div>
+    );
+  };
+
+  const renderActions = (project, stopPropagation = false) => {
+    const stop = stopPropagation ? (e) => e.stopPropagation() : undefined;
+    const hasLive = Boolean(project.links?.live);
+    const hasRepo = Boolean(project.links?.repo);
+
+    return (
+      <div className="project-card-v2__actions">
+        {hasLive && (
+          <a
+            href={project.links.live}
+            className="custom-btn btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={stop}
+          >
+            Live Site
+          </a>
+        )}
+        {hasRepo && (
+          <a
+            href={project.links.repo}
+            className="custom-btn btn-codigo"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={stop}
+          >
+            GitHub
+          </a>
+        )}
+        {!hasLive && !hasRepo && project.access !== 'live' && (
+          <span className="project-availability-tag">
+            {ACCESS_LABELS[project.access] || 'Details on request'}
+          </span>
+        )}
+      </div>
+    );
+  };
+
   return (
     <section className="proyectos mas-proyect" id="proyectos">
-      <h2 className="heading" style={{textAlign: 'center', marginBottom: '2rem'}}>Projects</h2>
-      <Swiper
-        spaceBetween={30}
-        loop={true}
-        grabCursor={true}
-        centeredSlides={true}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
-        modules={[Pagination, Autoplay]}
-        breakpoints={{
-          0: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-        className='proyectos-slider mySwiper'
-        onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
-      >
-        {projects.map((project, idx) => (
-          <SwiperSlide className='caja' key={idx}>
-            <div className="project-card" style={{cursor: 'pointer', background: 'transparent', boxShadow: 'none', textAlign: 'center'}}>
-              <img src={project.image} alt={project.title} style={{width: '100%', height: '180px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1rem', background: '#eee'}} />
-              <h3 style={{margin: '1rem 0 0.5rem 0', textAlign: 'center', fontWeight: 700}}>{project.title}</h3>
-              <div style={{color: '#00e5fe', fontWeight: 500, marginBottom: '0.5rem'}}>{project.subtitle}</div>
-              <div style={{color: '#bdbdbd', fontSize: '1.1rem', marginBottom: '0.5rem'}}>{project.tech}</div>
-              {activeIndex === idx && (
-                <>
-                  <p className="project-desc-swiper">{project.description}</p>
-                  <div style={{display: 'flex', gap: '1rem', justifyContent: 'center', margin: '1rem 0', flexWrap: 'wrap'}}>
-                    <a href={project.live} className="custom-btn btn" target="_blank" rel="noopener noreferrer">Demo</a>
-                    {project.repo && (
-                      <a href={project.repo} className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">Repository</a>
-                    )}
-                  </div>
-                </>
-              )}
-            </div>
-          </SwiperSlide>
+      <h2 className="heading">
+        <FormattedMessage id="projects" defaultMessage="Projects" />
+      </h2>
+      <p className="projects-intro section-subtitle">
+        <FormattedMessage
+          id="projects-intro"
+          defaultMessage="Production apps, award-winning AI systems, and institutional platforms. Live links where available; internal and mobile projects include context for recruiters."
+        />
+      </p>
+
+      <div className="projects-legend" role="list" aria-label="Project availability legend">
+        <span className="projects-legend__item" role="listitem">
+          <span className="projects-legend__dot projects-legend__dot--live" /> Live demo
+        </span>
+        <span className="projects-legend__item" role="listitem">
+          <span className="projects-legend__dot projects-legend__dot--mobile" /> Android app
+        </span>
+        <span className="projects-legend__item" role="listitem">
+          <span className="projects-legend__dot projects-legend__dot--internal" /> Internal only
+        </span>
+      </div>
+
+      <div className="projects-filters" role="tablist" aria-label="Filter projects">
+        {PROJECT_FILTERS.map((f) => (
+          <button
+            key={f.id}
+            type="button"
+            role="tab"
+            aria-selected={filter === f.id}
+            className={`projects-filter-btn${filter === f.id ? ' active' : ''}`}
+            onClick={() => setFilter(f.id)}
+          >
+            {f.label}
+          </button>
         ))}
-      </Swiper>
-      {modalIdx !== null && (
-        <div className="modal-overlay" style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.7)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center'}} onClick={() => setModalIdx(null)}>
-          <div className="modal-content" style={{background: '#fff', borderRadius: '16px', padding: '2rem', maxWidth: '600px', width: '90%', position: 'relative'}} onClick={e => e.stopPropagation()}>
-            <button onClick={() => setModalIdx(null)} style={{position: 'absolute', top: 10, right: 20, background: 'none', border: 'none', fontSize: '2rem', cursor: 'pointer', color: '#00e5fe'}}>&times;</button>
-            <img src={projects[modalIdx].image} alt={projects[modalIdx].title} style={{width: '100%', borderRadius: '12px', marginBottom: '1rem'}} />
-            <h3 style={{margin: '1rem 0 0.5rem 0', textAlign: 'center'}}>{projects[modalIdx].title}</h3>
-            <p style={{fontSize: '1.1rem', textAlign: 'center', marginBottom: '0.5rem'}}>{projects[modalIdx].description}</p>
-            <div style={{display: 'flex', gap: '1rem', marginTop: '1rem', justifyContent: 'center', flexWrap: 'wrap'}}>
-              <a href={projects[modalIdx].live} className="custom-btn btn" target="_blank" rel="noopener noreferrer">Demo</a>
-              {projects[modalIdx].repo && (
-                <a href={projects[modalIdx].repo} className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">Repository</a>
+      </div>
+
+      <div className="projects-grid">
+        {filtered.map((project) => (
+          <article
+            key={project.id}
+            className="project-card-v2"
+            onClick={(e) => openModal(e, project)}
+            onKeyDown={(e) => e.key === 'Enter' && setModalProject(project)}
+            tabIndex={0}
+            role="button"
+            aria-label={`View details for ${project.title}`}
+          >
+            <div
+              className={`project-card-v2__media${
+                project.mediaType === 'mobile' ? ' project-card-v2__media--mobile' : ''
+              }`}
+            >
+              {renderMedia(project)}
+              <span className={`project-card-v2__badge project-card-v2__badge--${project.badgeType}`}>
+                {project.badge}
+              </span>
+            </div>
+            <div className="project-card-v2__body">
+              <p className="project-card-v2__period">{project.period}</p>
+              <h3 className="project-card-v2__title">{project.title}</h3>
+              <p className="project-card-v2__tagline">{project.tagline}</p>
+              <p className="project-card-v2__role">{project.role}</p>
+              <AccessNotice project={project} />
+              <ul className="project-card-v2__highlights">
+                {project.highlights.slice(0, 2).map((h, i) => (
+                  <li key={i}>{h}</li>
+                ))}
+              </ul>
+              <div className="project-card-v2__stack">
+                {project.stack.slice(0, 4).map((tech) => (
+                  <span key={tech} className="project-card-v2__chip">
+                    {tech}
+                  </span>
+                ))}
+                {project.stack.length > 4 && (
+                  <span className="project-card-v2__chip">+{project.stack.length - 4}</span>
+                )}
+              </div>
+              {renderActions(project, true)}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {modalProject && (
+        <div
+          className="project-modal-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="project-modal-title"
+          onClick={() => setModalProject(null)}
+        >
+          <div className="project-modal" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="project-modal__close"
+              onClick={() => setModalProject(null)}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <div
+              className={`project-modal__media${
+                modalProject.mediaType === 'mobile' ? ' project-modal__media--mobile' : ''
+              }`}
+            >
+              {modalProject.image ? (
+                <img
+                  className="project-modal__img"
+                  src={modalProject.image}
+                  alt={`${modalProject.title} screenshot`}
+                />
+              ) : (
+                <div
+                  className="project-modal__placeholder"
+                  style={{
+                    background: modalProject.placeholder?.gradient || 'var(--gradient-glow)',
+                  }}
+                >
+                  {modalProject.placeholder?.icon || '⚡'}
+                </div>
               )}
             </div>
+            <h3 id="project-modal-title">{modalProject.title}</h3>
+            <p className="project-modal__meta">
+              {modalProject.tagline} · {modalProject.period}
+            </p>
+            <p className="project-card-v2__role">{modalProject.role}</p>
+            <AccessNotice project={modalProject} />
+            <ul>
+              {modalProject.highlights.map((h, i) => (
+                <li key={i}>{h}</li>
+              ))}
+            </ul>
+            <div className="project-card-v2__stack">
+              {modalProject.stack.map((tech) => (
+                <span key={tech} className="project-card-v2__chip">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            {renderActions(modalProject)}
           </div>
         </div>
       )}
-      <style>{`
-        .project-desc-swiper {
-          font-size: 1.1rem;
-          text-align: center;
-          margin: 1rem 0 1.5rem 0;
-          border-radius: 8px;
-          padding: 0.7rem 1rem;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-          transition: background 0.3s, color 0.3s;
-        }
-        body.dark .project-desc-swiper {
-          background: transparent;
-          color: #fff;
-        }
-        body.light .project-desc-swiper {
-          background: #fff;
-          color: #222;
-        }
-      `}</style>
     </section>
   );
 };

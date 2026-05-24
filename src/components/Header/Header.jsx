@@ -1,86 +1,74 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect } from 'react';
 import './Header.css';
-/* ReactScroll */
 import { Link } from 'react-scroll';
-
-/* React router */
 import { NavLink } from 'react-router-dom';
-
-/* DarkMode */
 import DarkMode from '../DarkMode/DarkMode';
-
-/* Language */
-import { FormattedMessage } from "react-intl";
-import { langContext } from '../../context/Context';
+import { FormattedMessage } from 'react-intl';
 
 const Header = () => {
-    // Buttom language
-    const idioma = useContext(langContext);
-    // Menu desplegable
-    const menuDesplegable = () => {
-        let navbar = document.querySelector('.navbar');
-        navbar.classList.toggle("activar");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-        window.onscroll = () => {
-            if (window.scrollY > 0) {
-                document.querySelector(".site-header").classList.add("activar")
-            } else document.querySelector(".site-header").classList.remove("activar")
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-            navbar.classList.remove("activar")
-        }
-    }
+  const closeMenu = () => setMenuOpen(false);
 
-    return (
-        <header className="site-header">
-            <div id="menu-btn" className="fas fa-bars" onClick={menuDesplegable}></div>
+  const navLinks = [
+    { to: 'inicio', id: 'home' },
+    { to: 'sobre-mi', id: 'about' },
+    { to: 'education', id: 'education' },
+    { to: 'servicios', id: 'skills' },
+    { to: 'proyectos', id: 'projects' },
+    { to: 'hackathon', id: 'achievements' },
+    { to: 'contactos', id: 'contact' },
+  ];
 
-            <NavLink className="logo" to="/">
-                <p>=(<span>Shravankumar</span>)=></p>
-            </NavLink>
+  return (
+    <header className={`site-header ${scrolled ? 'header-scrolled' : ''}`}>
+      <NavLink className="logo" to="/">
+        <span className="logo-bracket">&lt;</span>
+        <span className="logo-name">Shravan</span>
+        <span className="logo-bracket">/&gt;</span>
+      </NavLink>
 
-            <nav className="navbar">
-                <Link to="inicio" spy={true} offset={-150} href="#inicio">
-                    <FormattedMessage
-                        id='home'
-                        defaultMessage='Home'
-                    />
-                </Link>
-                <Link to="sobre-mi" spy={true} offset={-150} href="#sobre-mi">
-                    <FormattedMessage
-                        id='about'
-                        defaultMessage='About'
-                    />
-                </Link>
-                <Link to="proyectos" spy={true} offset={-150} href="#proyectos">
-                    <FormattedMessage
-                        id='projects'
-                        defaultMessage='Projects'
-                    />
-                </Link>
-                <Link to="certificates" spy={true} offset={-150} href="#certificates">
-                    <FormattedMessage
-                        id='certificates'
-                        defaultMessage='Certificates'
-                    />
-                </Link>
-                <Link to="education" spy={true} offset={-150} href="#education">
-                    <FormattedMessage
-                        id='education'
-                        defaultMessage='Education'
-                    />
-                </Link>
-                <Link to="contactos" spy={true} offset={-150} href="#contactos">
-                    <FormattedMessage
-                        id='contact'
-                        defaultMessage='Contact'
-                    />
-                </Link>
-            </nav>
-            <div className="switch" id="switch">
-                <DarkMode />
-            </div>
-        </header>
-    )
-}
+      <nav className={`navbar ${menuOpen ? 'nav-active' : ''}`}>
+        {navLinks.map((item) => (
+          <Link
+            key={item.to}
+            to={item.to}
+            spy
+            offset={-150}
+            href={`#${item.to}`}
+            onClick={closeMenu}
+          >
+            <FormattedMessage id={item.id} />
+          </Link>
+        ))}
+      </nav>
 
-export default React.memo(Header);
+      <div className="header-right">
+        <div className="switch" id="switch">
+          <DarkMode />
+        </div>
+        <div
+          className={`menu-toggle ${menuOpen ? 'menu-active' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          role="button"
+          tabIndex={0}
+          aria-label="Toggle navigation"
+          onKeyDown={(e) => e.key === 'Enter' && setMenuOpen(!menuOpen)}
+        >
+          <span />
+          <span />
+          <span />
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

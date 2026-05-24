@@ -7,19 +7,19 @@ const langContext = React.createContext();
 
 
 const LangProvider = ({children}) => {
-    let localePorDefecto;
-	let mensajesPorDefecto;
+    let localePorDefecto = 'en-US';
+	let mensajesPorDefecto = MensajeIngles;
 	const lang = localStorage.getItem('lang');
 
 	if(lang){
-		localePorDefecto = lang
+		localePorDefecto = lang;
 
 		if(lang === 'es-ES'){
 			mensajesPorDefecto = MensajeEspañol;
 		} else if(lang === 'en-US'){
 			mensajesPorDefecto = MensajeIngles;
 		} else {
-			localePorDefecto = 'en-US'
+			localePorDefecto = 'en-US';
 			mensajesPorDefecto = MensajeIngles;
 		}
 	}

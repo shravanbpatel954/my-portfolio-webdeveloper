@@ -1,0 +1,173 @@
+/********************** Shared section layout (home + inner pages) **********************/
+
+section .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  gap: 1.5rem;
+}
+
+section .row .columns {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+  color: var(--text-secondary);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+section .row .columns:hover {
+  border-color: var(--glass-border-hover);
+}
+
+section .row .columns h3 {
+  font-size: 2rem;
+  color: var(--text-accent);
+  margin-bottom: 1.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+section .row .columns h4 {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-transform: none;
+  line-height: 1.3;
+}
+
+section .row .columns p {
+  font-size: 1.6rem;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  text-transform: none;
+  color: var(--text-secondary);
+}
+
+section .row .columns ul li {
+  list-style: none;
+}
+
+section .row .columns ul li p {
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+}
+
+section .row .columns ul li p span {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+section .row .columns .mas-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+#sobre-mi .row {
+  overflow-x: hidden !important;
+}
+
+section .row .col-skill h4 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin: 2rem 0 1.2rem;
+  text-transform: none;
+}
+
+.skill {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.skill h5 {
+  background: var(--bg-tertiary);
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.1rem;
+  min-width: 8rem;
+  margin-top: -0.5rem;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: 0.35s ease all;
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+}
+
+.skill > div:hover h5 {
+  opacity: 1;
+  transform: translateY(-12px);
+}
+
+.icons-skils {
+  width: 6rem;
+  height: 6rem;
+  margin: 0.5rem 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+section .row .columns .skill img:hover {
+  transform: scale(1.12);
+}
+
+/********************** Services grid **********************/
+
+.servicios .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 2rem;
+}
+
+.servicios .row .columns {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.servicios .row i {
+  font-size: 3.2rem;
+  color: var(--accent-indigo);
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.servicios .row .columns:hover i {
+  color: var(--accent-cyan);
+  transform: scale(1.08);
+}
+
+.servicios .row h3 {
+  font-size: 2rem;
+  color: var(--text-primary) !important;
+  margin-bottom: 1rem;
+}
+
+.servicios .row p {
+  font-size: 1.45rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+@media (max-width: 570px) {
+  section .row {
+    grid-template-columns: 1fr;
+  }
+
+  section .row .columns {
+    padding: 2rem 1.5rem;
+  }
+
+  .servicios .row {
+    grid-template-columns: 1fr;
+  }
+}

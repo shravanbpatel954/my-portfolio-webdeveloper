@@ -1,0 +1,99 @@
+.certificates {
+  padding: 3rem 0 4rem;
+}
+
+.certificates__gallery {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.certificate-card {
+  border: 2px solid var(--glass-border-hover);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s;
+  position: relative;
+  max-width: 280px;
+}
+
+.certificate-card:hover {
+  transform: scale(1.04) translateY(-4px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 12px 40px rgba(0, 242, 254, 0.15);
+}
+
+.certificate-card img {
+  width: 260px;
+  height: 185px;
+  object-fit: cover;
+  display: block;
+}
+
+.certificate-card__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--gradient-primary);
+  opacity: 0.85;
+}
+
+.certificate-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(3, 7, 18, 0.88);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.light .certificate-modal-overlay {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.certificate-modal {
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  max-width: 700px;
+  width: 90%;
+  position: relative;
+  box-shadow: var(--glass-shadow);
+}
+
+.certificate-modal__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--text-accent);
+}
+
+.certificate-modal img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+}
+
+.certificate-modal__title {
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-accent);
+  font-size: 1.35rem;
+  text-transform: none;
+  line-height: 1.5;
+}
