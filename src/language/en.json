@@ -12,9 +12,6 @@
   "education-current": "Pursuing",
   "contact": "Contact",
 
-  "site-web": "websites",
-  "games": "games",
-
   "greeting": "Hello, I'm",
   "name": "Shravankumar B. Patel",
   "hero-title-prefix": "I am",
@@ -28,7 +25,7 @@
   "hero-peek-projects": "10 projects",
   "hero-peek-projects-sub": "MERN, mobile & AI",
   "hero-peek-live": "1 live product",
-  "hero-peek-live-sub": "realtorbazar.com",
+  "hero-peek-live-sub": "realtorbazaar.com",
   "hero-peek-hackathon": "Hackathon win",
   "hero-peek-hackathon-sub": "2nd of 50+ teams",
 
@@ -61,7 +58,7 @@
 
   "highlight-mca": "MCA (Pursuing) — BVIMIT, Navi Mumbai",
   "highlight-hackathon": "2nd Prize — Innov8 Hackathon (50+ teams)",
-  "highlight-live": "Live deployed project — realtorbazar.com",
+  "highlight-live": "Live deployed project — realtorbazaar.com",
   "highlight-mobile": "Android ML app — MindGuard (MCA project)",
   "highlight-nptel": "NPTEL Elite Silver — Top 5% Cloud Computing",
 

@@ -38,7 +38,7 @@ I’ve built multiple production-ready projects, including an AI-based multiling
                         <p><span>Education:</span> MCA (Pursuing), BVIMIT · B.Sc. CS</p>
                     </li>
                     <li>
-                        <p><span>Looking for:</span> Full-Time · Internship · Graduate SDE</p>
+                        <p><span>Looking for:</span> Full-Time · Internship</p>
                     </li>
                     <li>
                         <p><span>Email:</span> shravan.b.patel954@gmail.com</p>

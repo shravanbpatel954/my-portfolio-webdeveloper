@@ -21,8 +21,8 @@ const projects = [
     links: {},
   },
   {
-    id: 'realtorbazar',
-    title: 'RealtorBazar',
+    id: 'realtorbazaar',
+    title: 'RealtorBazaar',
     tagline: 'Industry Project · Live & Deployed',
     period: 'Mar 2026 – Apr 2026',
     role: 'Full-Stack Developer (Solo)',
@@ -35,11 +35,11 @@ const projects = [
     imageFit: 'cover',
     stack: ['React.js', 'Node.js', 'Express', 'MongoDB'],
     highlights: [
-      'End-to-end real-estate platform built and deployed during MCA — live at realtorbazar.com.',
+      'End-to-end real-estate platform built and deployed during MCA — live at realtorbazaar.com.',
       'Property search with category filters (Residential, Commercial, Plot, PG) and admin dashboard.',
       'REST APIs with Node.js/Express, MongoDB, and cloud deployment.',
     ],
-    links: { live: 'https://realtorbazar.com' },
+    links: { live: 'https://realtorbazaar.com/' },
   },
   {
     id: 'mindguard',

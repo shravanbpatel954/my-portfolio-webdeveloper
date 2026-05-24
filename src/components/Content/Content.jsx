@@ -21,7 +21,7 @@ const HERO_PEEKS = [
     id: 'hero-peek-live',
     defaultMessage: '1 live product',
     subId: 'hero-peek-live-sub',
-    subDefault: 'realtorbazar.com',
+    subDefault: 'realtorbazaar.com',
     to: 'proyectos',
     icon: 'fa-globe',
   },

@@ -21,7 +21,7 @@ const highlights = [
   {
     icon: 'fa-rocket',
     id: 'highlight-live',
-    defaultMessage: 'Live deployed project — realtorbazar.com',
+    defaultMessage: 'Live deployed project — realtorbazaar.com',
   },
 ];
 
