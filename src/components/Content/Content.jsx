@@ -6,58 +6,33 @@ import { Link } from 'react-scroll';
 import { FormattedMessage } from 'react-intl';
 import cv from '../../cv/cv.pdf';
 
-const HERO_TAGS = [
-  'React',
-  'Node.js',
-  'MongoDB',
-  'React Native',
-  'AI / ML',
-];
+const HERO_TAGS = ['React.js', 'Node.js', 'MongoDB', 'Python', 'React Native', 'Docker', 'FAISS', 'ONNX'];
 
-const HERO_STATS = [
-  { number: '5+', label: 'Projects Built' },
-  { number: '3+', label: 'Hackathons' },
-  { number: '1', label: 'Live Platform' },
-];
+const SEEKING_ROLES = ['Full-Time', 'Internship', 'Graduate SDE'];
 
 const Content = () => (
   <div className="contenido">
     <ParticleHeaderBg />
-
     <section className="inicio" id="inicio">
-      <div
-        className="hero-glass-container"
-        data-aos="zoom-in"
-        data-aos-duration="1000"
-      >
-        {/* Badge */}
+      <div className="hero-glass-container" data-aos="zoom-in" data-aos-duration="1000">
         <div className="hero-badge">
           <span className="hero-badge__dot" aria-hidden />
           <FormattedMessage
             id="hero-badge"
-            defaultMessage="Open to Software Engineering · Full-Stack · AI Roles"
+            defaultMessage="MCA Candidate · Open to full-time & internship roles"
           />
         </div>
 
-        {/* Main Heading */}
-        <h1 className="hero-main-heading">
-          <FormattedMessage
-            id="hero-main-heading"
-            defaultMessage="Building scalable web & AI-powered applications."
-          />
+        <p className="hero-greeting">
+          <FormattedMessage id="greeting" defaultMessage="Hello, I'm" />
+        </p>
+
+        <h1 className="hero-title">
+          <span className="gradient-text">
+            <FormattedMessage id="name" defaultMessage="Shravankumar B. Patel" />
+          </span>
         </h1>
 
-        {/* Name */}
-        <h2 className="hero-name">
-          <span className="gradient-text">
-            <FormattedMessage
-              id="name"
-              defaultMessage="Shravankumar B. Patel"
-            />
-          </span>
-        </h2>
-
-        {/* Education */}
         <p className="hero-education">
           <FormattedMessage
             id="hero-education"
@@ -65,43 +40,44 @@ const Content = () => (
           />
         </p>
 
-        {/* Dynamic Role */}
-        <div className="hero-role-line">
-          <Typical
-            loop={Infinity}
-            wrapper="span"
-            steps={[
-              'Full-Stack Developer',
-              1800,
-              'Software Engineer',
-              1800,
-              'AI-Powered App Builder',
-              1800,
-              'React Native Developer',
-              1800,
-            ]}
-          />
-        </div>
+        <p className="hero-role-line">
+          <FormattedMessage id="hero-role-line" defaultMessage="Aspiring" />{' '}
+          <span className="hero-typewriter">
+            <Typical
+              loop={Infinity}
+              wrapper="span"
+              steps={[
+                'Full-Stack Developer',
+                1500,
+                'Software Engineer',
+                1500,
+                'AI / ML Engineer',
+                1500,
+                'React Native Developer',
+                1500,
+              ]}
+            />
+          </span>
+        </p>
 
-        {/* Summary */}
         <p className="hero-summary">
           <FormattedMessage
             id="hero-summary"
-            defaultMessage="MCA student building production-ready web, mobile, and AI applications using MERN, React Native, and modern AI pipelines. Experienced in hackathons, scalable UI systems, and real-world deployment."
+            defaultMessage="MCA student with hands-on project experience in MERN stack, React Native, and AI pipelines. Built award-winning hackathon systems, a live deployed web platform, university software, and an Android ML app — now seeking a graduate developer role."
           />
         </p>
 
-        {/* Stats */}
-        <div className="hero-stats">
-          {HERO_STATS.map((item) => (
-            <div key={item.label} className="hero-stat-card">
-              <h3>{item.number}</h3>
-              <p>{item.label}</p>
-            </div>
+        <div className="hero-seeking">
+          <span className="hero-seeking__label">
+            <FormattedMessage id="hero-seeking-label" defaultMessage="Open to" />
+          </span>
+          {SEEKING_ROLES.map((role) => (
+            <span key={role} className="hero-seeking__chip">
+              {role}
+            </span>
           ))}
         </div>
 
-        {/* Tech Stack */}
         <div className="hero-tags">
           {HERO_TAGS.map((tag) => (
             <span key={tag} className="hero-tech-tag">
@@ -110,21 +86,10 @@ const Content = () => (
           ))}
         </div>
 
-        {/* CTA Buttons */}
         <div className="hero-cta">
-          <Link
-            to="proyectos"
-            spy
-            smooth
-            offset={-100}
-            className="custom-btn btn"
-          >
-            <FormattedMessage
-              id="btn-projects"
-              defaultMessage="View My Work"
-            />
+          <Link to="proyectos" spy offset={-150} href="#proyectos" className="custom-btn btn">
+            <FormattedMessage id="btn-more-projects" defaultMessage="View Projects" />
           </Link>
-
           <a
             href={cv}
             download="Shravankumar-Patel-Resume.pdf"
@@ -132,29 +97,19 @@ const Content = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FormattedMessage
-              id="btn-cv"
-              defaultMessage="Resume"
-            />
+            <FormattedMessage id="btn-cv" defaultMessage="Download Resume" />
           </a>
-
           <a
             href="https://www.linkedin.com/in/shravan-kumar-patel/"
             className="custom-btn btn-codigo"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Let's Connect
+            LinkedIn
           </a>
         </div>
 
-        {/* Scroll Down */}
-        <Link
-          to="sobre-mi"
-          smooth
-          offset={-70}
-          className="hero-scroll-link"
-        >
+        <Link to="sobre-mi" href="#sobre-mi" className="hero-scroll-link">
           <div className="scroll-down" aria-hidden />
         </Link>
       </div>
