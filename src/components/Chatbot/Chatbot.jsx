@@ -168,26 +168,26 @@ const [showHint, setShowHint] = useState(true);
 const handleSend = (e) => {
 e.preventDefault();
 
-```
-const trimmed = input.trim();
+const handleSend = (e) => {
+  e.preventDefault();
 
-if (!trimmed) return;
+  const trimmed = input.trim();
 
-const userMsg = {
-  from: 'user',
-  text: trimmed,
-};
+  if (!trimmed) return;
 
-const botMsg = {
-  from: 'bot',
-  text: getBotReply(trimmed),
-};
+  const userMsg = {
+    from: 'user',
+    text: trimmed,
+  };
 
-setMessages((prev) => [...prev, userMsg, botMsg]);
+  const botMsg = {
+    from: 'bot',
+    text: getBotReply(trimmed),
+  };
 
-setInput('');
-```
+  setMessages((prev) => [...prev, userMsg, botMsg]);
 
+  setInput('');
 };
 
 const attention = showHint && !open;
