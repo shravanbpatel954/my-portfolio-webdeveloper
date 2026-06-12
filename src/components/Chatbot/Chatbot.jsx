@@ -2,178 +2,284 @@ import React, { useState } from 'react';
 import './Chatbot.css';
 
 const initialMessages = [
-  {
-    from: 'bot',
-    text: "👋 Hi! I'm Shravan AI. I can help you explore:🚀 Projects🏆 Hackathon achievements 💻 Technical skills🎓 Education & certifications📄 Resume & contact information Ask me anything!'",
-  },
+{
+from: 'bot',
+text: `👋 Hi! I'm Shravan AI.
+
+I know everything about Shravan's:
+
+🚀 Projects
+🏆 Hackathon Achievements
+💻 Technical Skills
+🤖 AI & Machine Learning
+📱 Mobile Development
+☁️ DevOps & Cloud
+🎓 Education
+📜 Certifications
+📞 Contact Information
+
+Try asking:
+
+• Tell me about StudyBuddy
+• What did you build at Innov8 Hackathon?
+• What technologies do you use?
+• Show your certifications
+• Tell me about your AI projects`,
+},
 ];
 
 const faqAnswers = [
-  {
-    keywords: ['studybuddy', 'study buddy', 'learning platform'],
-    answer:
-      'StudyBuddy is an AI-powered adaptive learning platform built with React.js, Node.js/Express, MongoDB and Google Gemini API. It delivers personalised study recommendations and adaptive quizzes based on learner performance and is deployed on Render.',
-  },
-  {
-    keywords: ['education', 'qualification', 'qualifications', 'degree', 'degrees', 'mca', 'master of computer applications', 'postgraduate', 'bvimit', 'bharati', 'computer applications'],
-    answer:
-      'Education (Qualifications):\n\n• Master of Computer Applications (MCA) — Sep 2025 – Present — Bharati Vidyapeeth Institute of Management & IT (BVIMIT), Navi Mumbai\n• B.Sc Computer Science — 2022 – 2025 — N.E.S Ratnam College of Arts, Science & Commerce\n• High School — 2021 – 2022 — PCMB (Physics, Chemistry, Mathematics, Biology) — Raminiranjan Jhunjhunwala College',
-  },
-  {
-    keywords: ['devops', 'git', 'github', 'gitlab', 'jenkins', 'docker', 'kubernetes', 'kubernates'],
-    answer:
-      'On the DevOps side, Shravan works with Git for version control, GitHub and GitLab for hosting and collaboration, Jenkins for CI pipelines, Docker for containerisation, and Kubernetes for orchestrating and scaling containerised services.',
-  },
-  {
-    keywords: ['certificates', 'certificate', 'devtown', 'internshala', 'nsdc', 'skill india'],
-    answer:
-      'Certificates:\n\n• DevTown — Full-Stack Web Development\n• Internshala — Internshala Certificate\n• NSDC / Skill India — NSDC Skill India Certificate',
-  },
-  {
-    keywords: ['about', 'who is shravan', 'about me', 'profile', 'bio'],
-    answer:
-      'Shravan is an MCA student and a DevOps-minded full-stack developer. He builds production-ready apps and also works with CI/CD, Docker, and Kubernetes to ship reliably.',
-  },
-  {
-    keywords: ['projects', 'project', 'work', 'portfolio'],
-    answer:
-      'Projects:\n\n• StudyBuddy — AI-Powered Adaptive Learning Platform (React.js, Node.js, MongoDB, Google Gemini) — https://studybuddy-kc2m.onrender.com/\n• Prepa — AI Interview Prep Application\n• AIO — AI-Based Advisor Web Application\n• Lakshwear — E-commerce Website\n• Online Game Lab\n• Creative Recycle Solution Web',
-  },
-  {
-    keywords: ['contact', 'email', 'whatsapp', 'linkedin'],
-    answer:
-      'Contact:\n\nEmail: shravan.b.patel954@gmail.com\nWhatsApp: https://api.whatsapp.com/send?phone=918104479942\nLinkedIn: https://www.linkedin.com/in/shravan-kumar-patel/\nGitHub: https://github.com/shravanbpatel954',
-  },
-  {
-    keywords: ['stack', 'tech stack', 'technologies', 'skills'],
-    answer:
-      'His main stack is React, TypeScript, HTML/CSS, Node.js/Express, MySQL and MongoDB, plus DevOps tooling like Git/GitHub/GitLab, Jenkins, Docker and Kubernetes.',
-  },
-  {
-    keywords: ['lakshwear', 'e-commerce', 'laksh wear'],
-    answer:
-      'Lakshwear is a production e-commerce website built with React and JavaScript, focused on clean UI, secure checkout and a smooth shopping experience.',
-  },
-  {
-    keywords: ['prepa', 'interview prep'],
-    answer:
-      'Prepa is an AI interview preparation app that generates tailored questions and feedback to help users practise for job interviews.',
-  },
-  {
-    keywords: ['contact', 'hire', 'reach out', 'email', 'whatsapp'],
-    answer:
-      'You can contact Shravan via email at shravan.b.patel954@gmail.com, LinkedIn, GitHub or WhatsApp — all links are available in the hero section and Contact section.',
-  },
+{
+keywords: ['about', 'who is shravan', 'about me', 'profile', 'bio'],
+answer:
+'Shravan is an MCA student and Full-Stack Developer with experience in AI/ML, React Native, DevOps, NLP, cloud deployment and product development. He enjoys building end-to-end solutions that solve real-world problems.',
+},
+
+{
+keywords: ['education', 'qualification', 'degree', 'mca', 'bvimit'],
+answer:
+'🎓 Education:\n\n• MCA (2025 - Present) — Bharati Vidyapeeth Institute of Management & IT (BVIMIT), Navi Mumbai\n\n• B.Sc Computer Science (2022 - 2025) — N.E.S Ratnam College of Arts, Science & Commerce\n\n• Higher Secondary (PCMB) — Raminiranjan Jhunjhunwala College',
+},
+
+{
+keywords: ['skills', 'stack', 'tech stack', 'technologies'],
+answer:
+'💻 Technical Skills:\n\nFrontend: React.js, React Native, HTML5, CSS3, JavaScript, TypeScript\n\nBackend: Node.js, Express.js, REST APIs\n\nDatabases: MongoDB, PostgreSQL, MySQL, Firebase\n\nAI/ML: MiniLM, FAISS, ONNX, NLP, Gemini API\n\nDevOps: Docker, Git, GitHub, CI/CD, Render, Railway, Vercel\n\nLanguages: JavaScript, Python, Java',
+},
+
+{
+keywords: ['studybuddy', 'study buddy'],
+answer:
+'📚 StudyBuddy is an AI-powered adaptive learning platform built with React.js, Node.js, MongoDB and Google Gemini API. It provides personalized learning recommendations, AI-powered assistance and adaptive quizzes.',
+},
+
+{
+keywords: ['mindguard', 'mental health', 'android'],
+answer:
+'📱 MindGuard is a React Native Android application that uses AI-powered anomaly detection with Isolation Forest algorithms to identify behavioural deviations while maintaining privacy.',
+},
+
+{
+keywords: ['hackathon', 'innov8', 'pixels', 'award', 'prize'],
+answer:
+'🏆 Shravan secured 2nd Prize at Innov8 Hackathon (Pixels 2026) among 50+ teams. He worked as Backend & ML Pipeline Lead on a Multilingual Duplicate Detection System using MiniLM, FAISS and ONNX.',
+},
+
+{
+keywords: ['duplicate detection', 'multilingual'],
+answer:
+'🌍 Multilingual Duplicate Detection System uses MiniLM embeddings, FAISS vector search and ONNX optimization to perform semantic duplicate detection across multiple languages.',
+},
+
+{
+keywords: ['ai', 'machine learning', 'ml', 'nlp'],
+answer:
+'🤖 Shravan has experience with NLP, MiniLM embeddings, FAISS vector databases, ONNX optimization and Gemini API integrations. His AI work focuses on solving practical real-world problems.',
+},
+
+{
+keywords: ['devops', 'docker', 'ci cd', 'cloud', 'deployment'],
+answer:
+'☁️ Shravan works with Docker, Git, GitHub, cloud deployment platforms like Render, Railway and Vercel, along with CI/CD concepts and modern development workflows.',
+},
+
+{
+keywords: ['mobile', 'react native'],
+answer:
+'📱 Shravan develops Android applications using React Native and Firebase. His projects combine mobile development with AI and backend services.',
+},
+
+{
+keywords: ['realtorbazaar', 'real estate'],
+answer:
+'🏠 RealtorBazaar is a live real-estate platform developed using React.js, Node.js, Express and MongoDB. It includes property listings, admin dashboards and management tools.',
+},
+
+{
+keywords: ['prepa', 'interview'],
+answer:
+'🎯 Prepa is an AI-powered interview preparation platform that helps users practice interviews through tailored questions and AI-generated feedback.',
+},
+
+{
+keywords: ['aio', 'advisor'],
+answer:
+'🤖 AIO is an AI-based advisor application that provides personalized recommendations across multiple domains through an intelligent conversational interface.',
+},
+
+{
+keywords: ['projects', 'portfolio', 'project'],
+answer:
+'🚀 Major Projects:\n\n• Multilingual Duplicate Detection System\n• StudyBuddy\n• MindGuard\n• RealtorBazaar\n• Mumbai University Inventory System\n• Prepa\n• AIO\n• Lakshwear\n• Online Game Lab\n• Creative Recycle Solution',
+},
+
+{
+keywords: ['certificate', 'certification', 'certificates'],
+answer:
+'📜 Certifications:\n\n• NPTEL Cloud Computing (Top 5%)\n• NPTEL OOP in Java\n• Full-Stack Web Development (DevTown)\n• Internshala Web Development Training\n• Skill India / NSDC\n• Automation Anywhere Essentials',
+},
+
+{
+keywords: ['contact', 'email', 'linkedin', 'github', 'whatsapp', 'hire'],
+answer:
+'📞 Contact Information:\n\n📧 [shravan.b.patel954@gmail.com](mailto:shravan.b.patel954@gmail.com)\n\n💼 LinkedIn: linkedin.com/in/shravan-kumar-patel\n\n💻 GitHub: github.com/shravanbpatel954\n\n🌐 Portfolio: shravankumar.co.in',
+},
 ];
 
 function getBotReply(rawText) {
-  const text = rawText
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+const text = rawText
+.toLowerCase()
+.replace(/[^a-z0-9\s-]/g, ' ')
+.replace(/\s+/g, ' ')
+.trim();
 
-  // Simple intent matching (keyword-based) so it works fully offline.
-  // Order matters: put the most specific intents first.
-  const ordered = [...faqAnswers];
+for (const entry of faqAnswers) {
+for (const keyword of entry.keywords) {
+if (text.includes(keyword.toLowerCase())) {
+return entry.answer;
+}
+}
+}
 
-  for (const entry of ordered) {
-    for (const k of entry.keywords) {
-      const keyword = k.toLowerCase();
-      if (text.includes(keyword)) return entry.answer;
-    }
-  }
+return `I can help with:
 
-  return "Great question! I can answer things about Shravan's projects, DevOps tools (Git, GitHub, GitLab, Jenkins, Docker, Kubernetes), skills, and education. Try asking, for example: “What DevOps tools does Shravan use?” or “Tell me about the StudyBuddy project.”";
+🚀 Projects
+🤖 AI & Machine Learning
+💻 Technical Skills
+☁️ DevOps & Cloud
+📱 Mobile Development
+🏆 Hackathon Achievements
+🎓 Education
+📜 Certifications
+
+Try asking:
+• Tell me about StudyBuddy
+• What technologies do you use?
+• What did you build at Innov8 Hackathon?
+• Tell me about your AI projects`;
 }
 
 const Chatbot = () => {
-  const [messages, setMessages] = useState(initialMessages);
-  const [input, setInput] = useState('');
-  const [open, setOpen] = useState(false);
-  const [showHint, setShowHint] = useState(true);
+const [messages, setMessages] = useState(initialMessages);
+const [input, setInput] = useState('');
+const [open, setOpen] = useState(false);
+const [showHint, setShowHint] = useState(true);
 
-  const handleSend = (e) => {
-    e.preventDefault();
-    const trimmed = input.trim();
-    if (!trimmed) return;
+const handleSend = (e) => {
+e.preventDefault();
 
-    const userMsg = { from: 'user', text: trimmed };
-    const botMsg = { from: 'bot', text: getBotReply(trimmed) };
+```
+const trimmed = input.trim();
 
-    setMessages((prev) => [...prev, userMsg, botMsg]);
-    setInput('');
-  };
+if (!trimmed) return;
 
-  const attention = showHint && !open;
+const userMsg = {
+  from: 'user',
+  text: trimmed,
+};
 
-  return (
-    <div className="chatbot-widget" aria-live="polite">
-      {open && (
-        <div className="chatbot-shell" data-aos="fade-up">
-          <div className="chatbot-header">
-            <div className="chatbot-header__title">
-              <span className="chatbot-avatar">SB</span>
-              <div>
-                <div className="chatbot-name">Shravan&apos;s DevOps Assistant</div>
-                <div className="chatbot-role">DevOps &amp; CI/CD Q&amp;A</div>
-              </div>
+const botMsg = {
+  from: 'bot',
+  text: getBotReply(trimmed),
+};
+
+setMessages((prev) => [...prev, userMsg, botMsg]);
+
+setInput('');
+```
+
+};
+
+const attention = showHint && !open;
+
+return ( <div className="chatbot-widget" aria-live="polite">
+{open && ( <div className="chatbot-shell" data-aos="fade-up"> <div className="chatbot-header"> <div className="chatbot-header__title"> <span className="chatbot-avatar">AI</span>
+
+```
+          <div>
+            <div className="chatbot-name">
+              Shravan AI
             </div>
-            <button
-              type="button"
-              className="chatbot-close"
-              onClick={() => setOpen(false)}
-              aria-label="Close chat"
-            >
-              ×
-            </button>
-          </div>
 
-          <div className="chatbot-messages">
-            {messages.map((msg, index) => (
-              <div
-                key={index}
-                className={`chatbot-message chatbot-message--${msg.from}`}
-              >
-                <div className="chatbot-bubble">{msg.text}</div>
-              </div>
-            ))}
+            <div className="chatbot-role">
+              Projects • AI • Full-Stack • DevOps
+            </div>
           </div>
-
-          <form className="chatbot-input-row" onSubmit={handleSend}>
-            <input
-              type="text"
-              placeholder="Ask about projects or DevOps skills..."
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-            />
-            <button type="submit">
-              <i className="fas fa-paper-plane" aria-hidden="true" />
-            </button>
-          </form>
         </div>
-      )}
 
-      <button
-        type="button"
-        className={`chatbot-fab ${open ? 'chatbot-fab--open' : ''} ${attention ? 'chatbot-fab--attention' : ''}`}
-        onClick={() => {
-          setOpen((v) => !v);
-          setShowHint(false);
-        }}
-        aria-label="Open AI assistant chat"
+        <button
+          type="button"
+          className="chatbot-close"
+          onClick={() => setOpen(false)}
+          aria-label="Close chat"
+        >
+          ×
+        </button>
+      </div>
+
+      <div className="chatbot-messages">
+        {messages.map((msg, index) => (
+          <div
+            key={index}
+            className={`chatbot-message chatbot-message--${msg.from}`}
+          >
+            <div className="chatbot-bubble">
+              {msg.text}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <form
+        className="chatbot-input-row"
+        onSubmit={handleSend}
       >
-        <span className="chatbot-fab__glow" />
-        <i className="fas fa-robot" aria-hidden="true" />
-      </button>
-      {showHint && !open && (
-        <div className="chatbot-fab-hint">
-          <span>Talk to My Digital Twin</span>
-        </div>
-      )}
+        <input
+          type="text"
+          placeholder="Ask about projects, AI, skills or achievements..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+
+        <button type="submit">
+          <i
+            className="fas fa-paper-plane"
+            aria-hidden="true"
+          />
+        </button>
+      </form>
     </div>
-  );
+  )}
+
+  <button
+    type="button"
+    className={`chatbot-fab ${
+      open ? 'chatbot-fab--open' : ''
+    } ${
+      attention ? 'chatbot-fab--attention' : ''
+    }`}
+    onClick={() => {
+      setOpen((v) => !v);
+      setShowHint(false);
+    }}
+    aria-label="Open AI assistant chat"
+  >
+    <span className="chatbot-fab__glow" />
+    <i
+      className="fas fa-robot"
+      aria-hidden="true"
+    />
+  </button>
+
+  {showHint && !open && (
+    <div className="chatbot-fab-hint">
+      <span>Talk to My Digital Twin</span>
+    </div>
+  )}
+</div>
+```
+
+);
 };
 
 export default Chatbot;
-
