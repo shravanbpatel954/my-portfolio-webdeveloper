@@ -277,7 +277,7 @@ return ( <div className="chatbot-widget" aria-live="polite">
     </div>
   )}
 </div>
-```
+
 
 );
 };
