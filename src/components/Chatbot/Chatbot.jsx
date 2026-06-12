@@ -168,7 +168,7 @@ const Chatbot = () => {
       </button>
       {showHint && !open && (
         <div className="chatbot-fab-hint">
-          <span>Ask DevOps &amp; CI/CD assistant</span>
+          <span>Talk to My Digital Twin</span>
         </div>
       )}
     </div>
