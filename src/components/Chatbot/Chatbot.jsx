@@ -4,7 +4,7 @@ import './Chatbot.css';
 const initialMessages = [
   {
     from: 'bot',
-    text: 'Hi! I am Shravan’s DevOps & AI assistant. Ask me about his DevOps stack (Git, GitHub, GitLab, Jenkins, Docker, Kubernetes), projects like StudyBuddy, or his MCA education.',
+    text: "👋 Hi! I'm Shravan AI. I can help you explore:🚀 Projects🏆 Hackathon achievements 💻 Technical skills🎓 Education & certifications📄 Resume & contact information Ask me anything!'",
   },
 ];
 
