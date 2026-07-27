@@ -30,7 +30,7 @@ const Hackathon = () => {
             <span aria-hidden>🥈</span>
             <FormattedMessage
               id="hackathon-prize"
-              defaultMessage="2nd Prize among 50+ teams"
+              defaultMessage="2nd Prize among 600+ registered teams and 64+ offline round teams"
             />
           </h3>
           <h4>
