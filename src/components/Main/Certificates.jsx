@@ -19,6 +19,7 @@ const certificates = [
     alt: 'Web Development Training — Internshala & Skill India (NSDC)',
   },
   { src: require('../../img/internshala.jpg'), alt: 'Web Development Training — Internshala' },
+  { src: require('../../img/testing.jpg'), alt: 'Automated Software Testing - nasscom' },
 ];
 
 const Certificates = () => {
