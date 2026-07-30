@@ -11,6 +11,8 @@ const certificates = [
     src: require('../../img/nptel_oop.png'),
     alt: 'NPTEL Fundamentals of OOP in Java — IIT Roorkee (Elite Silver | 77%)',
   },
+  { src: require('../../img/devops.jpg'), alt: 'DevOps - Skill India (NSDC)' },
+  {
   { src: require('../../img/certificate1.jpg'), alt: 'Full-Stack Web Development — DevTown' },
   {
     src: require('../../img/nsdc.jpg'),
