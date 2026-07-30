@@ -24,6 +24,7 @@ const Header = () => {
     { to: 'servicios', id: 'skills' },
     { to: 'proyectos', id: 'projects' },
     { to: 'hackathon', id: 'achievements' },
+    { to: 'certificates', id: 'certificates' },
     { to: 'contactos', id: 'contact' },
   ];
 
