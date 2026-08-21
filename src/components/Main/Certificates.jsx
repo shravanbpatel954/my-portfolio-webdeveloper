@@ -20,6 +20,7 @@ const certificates = [
   },
   { src: require('../../img/internshala.jpg'), alt: 'Web Development Training — Internshala' },
   { src: require('../../img/testing.jpg'), alt: 'Automated Software Testing - nasscom' },
+   { src: require('../../img/automation.jpg'), alt: 'Automation Anywhere -Automation Anywhere' },
 ];
 
 const Certificates = () => {
