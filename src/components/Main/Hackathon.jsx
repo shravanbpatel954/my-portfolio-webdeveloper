@@ -20,7 +20,7 @@ const hackathonImages = [
     title: 'SIES College Event Stage',
   },
   {
-    src: require('../../img/faraway_certificate.png'),
+    src: require('../../img/farawaycertificate.jpg'),
     title: 'Far Away 2026 — International Hackathon',
   },
 ];
