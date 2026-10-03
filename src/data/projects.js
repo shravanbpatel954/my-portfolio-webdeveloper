@@ -54,6 +54,7 @@ const projects = [
     access: 'mobile',
     accessNote:
       'Private Android build — not on Play Store. APK/demo available on request for interviews.',
+    apk: 'https://github.com/shravanbpatel954/my-portfolio-webdeveloper/releases/download/v1.0.0/MindGuard.apk',
     image: require('../img/mindguard.png'),
     mediaType: 'mobile',
     stack: ['React Native', 'Firebase', 'Isolation Forest', 'Node.js'],
