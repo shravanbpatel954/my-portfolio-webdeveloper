@@ -65,6 +65,7 @@ const Project = () => {
     const stop = stopPropagation ? (e) => e.stopPropagation() : undefined;
     const hasLive = Boolean(project.links?.live);
     const hasRepo = Boolean(project.links?.repo);
+    const hasApk = Boolean(project.apk);
 
     return (
       <div className="project-card-v2__actions">
@@ -79,6 +80,7 @@ const Project = () => {
             Live Site
           </a>
         )}
+
         {hasRepo && (
           <a
             href={project.links.repo}
@@ -90,7 +92,21 @@ const Project = () => {
             GitHub
           </a>
         )}
-        {!hasLive && !hasRepo && project.access !== 'live' && (
+
+        {hasApk && (
+          <a
+            href={project.apk}
+            className="custom-btn btn-install"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={stop}
+          >
+            <i className="fab fa-android" aria-hidden="true" />
+            Install APK
+          </a>
+        )}
+
+        {!hasLive && !hasRepo && !hasApk && project.access !== 'live' && (
           <span className="project-availability-tag">
             {ACCESS_LABELS[project.access] || 'Details on request'}
           </span>
@@ -159,17 +175,20 @@ const Project = () => {
                 {project.badge}
               </span>
             </div>
+
             <div className="project-card-v2__body">
               <p className="project-card-v2__period">{project.period}</p>
               <h3 className="project-card-v2__title">{project.title}</h3>
               <p className="project-card-v2__tagline">{project.tagline}</p>
               <p className="project-card-v2__role">{project.role}</p>
               <AccessNotice project={project} />
+
               <ul className="project-card-v2__highlights">
                 {project.highlights.slice(0, 2).map((h, i) => (
                   <li key={i}>{h}</li>
                 ))}
               </ul>
+
               <div className="project-card-v2__stack">
                 {project.stack.slice(0, 4).map((tech) => (
                   <span key={tech} className="project-card-v2__chip">
@@ -180,6 +199,7 @@ const Project = () => {
                   <span className="project-card-v2__chip">+{project.stack.length - 4}</span>
                 )}
               </div>
+
               {renderActions(project, true)}
             </div>
           </article>
@@ -203,6 +223,7 @@ const Project = () => {
             >
               &times;
             </button>
+
             <div
               className={`project-modal__media${
                 modalProject.mediaType === 'mobile' ? ' project-modal__media--mobile' : ''
@@ -225,17 +246,20 @@ const Project = () => {
                 </div>
               )}
             </div>
+
             <h3 id="project-modal-title">{modalProject.title}</h3>
             <p className="project-modal__meta">
               {modalProject.tagline} · {modalProject.period}
             </p>
             <p className="project-card-v2__role">{modalProject.role}</p>
             <AccessNotice project={modalProject} />
+
             <ul>
               {modalProject.highlights.map((h, i) => (
                 <li key={i}>{h}</li>
               ))}
             </ul>
+
             <div className="project-card-v2__stack">
               {modalProject.stack.map((tech) => (
                 <span key={tech} className="project-card-v2__chip">
@@ -243,6 +267,7 @@ const Project = () => {
                 </span>
               ))}
             </div>
+
             {renderActions(modalProject)}
           </div>
         </div>
